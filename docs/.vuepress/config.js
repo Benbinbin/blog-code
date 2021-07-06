@@ -5,7 +5,7 @@ module.exports = {
   lang: 'zh-CN',
   base: "/blog-code/",
   title: "Blog",
-  description: 'A blog and knowledge management system about coding.',
+  description: 'A blog and knowledge management system about programming.',
   head: [
     ['link', { rel: 'icon', href: '/blog-code/images/favicon.ico' }],
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css' }],
