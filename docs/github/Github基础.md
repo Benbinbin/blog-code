@@ -51,7 +51,7 @@
 
 ![推送到远程仓库](./images/20191126224503586_27347.png)
 
-* 将本地 commit 推送到远程残酷可能需要输入用户名和密码，这取决于你如何配置 GitHub 的以及使用的远程 URL 。
+* 将本地 commit 推送到远程仓库可能需要输入用户名和密码，这取决于你如何配置 GitHub 的以及使用的远程 URL 。
     - 如果配置 GitHub 使用 HTTP 协议，就需要提供用户名和密码。如果你的密码出错，不用担心，它会让你重新输入
     - 如果配置 GitHub 使用 SSH 协议，并提供过 SSH 密匙，则不需要提供密码。参阅 GitHub 文档 [使用 SSH 连接](https://help.github.com/articles/connecting-to-github-with-ssh/)。
 * Git 会压缩文件使之变小，然后将其推送至远程仓库
