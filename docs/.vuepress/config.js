@@ -48,6 +48,10 @@ module.exports = {
           image: "github.svg"
         },
         {
+          name: "Docker",
+          image: "docker.svg"
+        },
+        {
           name: "Algorithm",
           image: "algorithm.svg"
         },
@@ -55,11 +59,11 @@ module.exports = {
     }],
     [require('./plugins/generateListPages.js'),
     {
-      postClassifications: ['git', 'github', 'algorithm']
+      postClassifications: ['git', 'github', 'docker', 'algorithm']
     }],
     [require('./plugins/generateFolderPages.js'),
     {
-      postFolders: ['git', 'github', 'algorithm']
+      postFolders: ['git', 'github', 'docker', 'algorithm']
     }],
   ],
   theme: path.resolve(__dirname, './theme/index.js'),
@@ -91,8 +95,8 @@ module.exports = {
     __HOME_DESCRIPTION__: "这是我的<a href='https://benbinbin.github.io/tech-blog/' target='_blank' class='hover:text-blue-600 underline font-bold transition-colors'>技术部落格</a>之一，主要内容是与编程相关的笔记。",
     __HOME_PAGE_COLOR__: '#9CA3AF',
     __AVATAR__: 'avatar.png',
-    __CLASSIFICATIONS__: ['All', 'Git', 'Github', 'Algorithm'],
-    __FOLDERS__: ['Git', 'Github', 'Algorithm'],
+    __CLASSIFICATIONS__: ['All', 'Git', 'Github', 'Docker', 'Algorithm'],
+    __FOLDERS__: ['Git', 'Github', 'Docker', 'Algorithm'],
     __FOOTER_AVATAR_LINK__: 'https://benbinbin.github.io/',
     __AUTHOR__: 'Benbinbin',
     __FOOTER_LICENSE__: 'CC-BY-SA-4.0',
