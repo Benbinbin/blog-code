@@ -1,0 +1,1 @@
+const e={key:"v-38ba005d",path:"/docker/DockerCompose.html",title:"Docker Compose",lang:"zh-CN",frontmatter:{createdTime:1627296147e3,updatedTime:1625900553e3},excerpt:"",headers:[],filePathRelative:"docker/DockerCompose.md",git:{updatedTime:1627296147e3}};export{e as data};

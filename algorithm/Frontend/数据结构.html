@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/blog-code/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css"><title>数据结构 | Blog</title><meta name="description" content="A blog and knowledge management system about coding."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="modulepreload" href="/blog-code/assets/app.93fa4a4f.js"><link rel="modulepreload" href="/blog-code/assets/数据结构.html.9b4084e1.js"><link rel="modulepreload" href="/blog-code/assets/数据结构.html.a4f4dc17.js">
+    <link rel="stylesheet" href="/blog-code/assets/style.cee61b43.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="min-h-screen flex flex-col"><nav class="px-4 sm:px-8 py-2 flex justify-between items-center sticky top-0 z-30 bg-white"><div class="left flex items-center space-x-0.5"><!--[--><button class="
+            catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden
+          " class="text-gray-400 hover:bg-gray-100 catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--><a class="avatar p-2 hover:bg-gray-100 rounded-md" href="/blog-code/#"><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full"></a></div><div class="right hidden sm:flex items-center space-x-0.5"><!--[--><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">All</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Git</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Github</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Docker</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Algorithm</button><!--]--><!--[--><button class="
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block
+          " class="text-gray-900 bg-gray-100 hover:bg-gray-200 p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--></div><div class="more-container sm:hidden relative"><button style="" class="p-2 select-none hover:bg-gray-100 rounded-md text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></button><button style="display:none;" class="p-2 select-none hover:bg-gray-100 rounded-md text-red-400 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></button><div style="display:none;" class="
+          more-modal
+          p-2
+          absolute
+          top-10
+          right-0
+          z-10
+          flex flex-col
+          space-y-2
+          bg-gray-100
+          rounded-md
+          opacity-90
+        "><!--[--><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">All</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Git</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Github</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Docker</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Algorithm</button><!--]--></div></div></nav><div class="relative flex-grow"><div class="theme-container no-navbar no-sidebar"><!----><div class="sidebar-mask"></div><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="数据结构" tabindex="-1"><a class="header-anchor" href="#数据结构" aria-hidden="true">#</a> 数据结构</h1><p>前端需要掌握的数据结构：</p><ul><li>数组（包括复合数组）</li><li>栈</li><li>队列</li><li>链表</li><li>树（一般是二叉树）</li></ul><p>💡 由于 JavaScript 中字符串和数组关联紧密，关键知识点重复度较高，在解决字符串问题时可以借鉴数组的知识。</p><h2 id="数组" tabindex="-1"><a class="header-anchor" href="#数组" aria-hidden="true">#</a> 数组</h2><p>JavaScript 原生支持数组结构，可以「开箱即用」不必自行模拟实现。</p><h3 id="创建数组" tabindex="-1"><a class="header-anchor" href="#创建数组" aria-hidden="true">#</a> 创建数组</h3><ul><li>方法一：方括号+元素内容</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><ul><li>方法二：构造函数 <code>Array()</code></li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 当以构造函数的形式创建数组时，若不传任何参数，得到的就会是一个空数组，等价于 const arr = []</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>💡 在算法题中我们初始化一个数组时，并不知道它内部元素的情况，推荐使用构造函数创建数组的方法</p><p>💡 如果需要创造<strong>指定长度的空数组</strong>，可以向数组构造函数传递<strong>一个数字作为参数</strong></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 得到一个长度为 7 的空数组</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>如果希望每个元素指定一个值来初始化数组，可以调用 <code>fill()</code> 方法</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 得到一个长度为7，且每个元素都初始化为1的数组</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="数组访问" tabindex="-1"><a class="header-anchor" href="#数组访问" aria-hidden="true">#</a> 数组访问</h3><p>直接在中括号中指定其索引即可访问数组中特定的元素</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 访问索引下标为 0 的元素，即第一个元素</span>
+arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="数组遍历" tabindex="-1"><a class="header-anchor" href="#数组遍历" aria-hidden="true">#</a> 数组遍历</h3><p>遍历数组即访问到数组中的每个元素，并且一般同时知道当前元素的索引。</p><p>💡 如果没有特殊的需要统一使用 for 循环来实现遍历，因为从性能上看 for 循环遍历起来是最快的。</p><ul><li>for 循环 以循环参数作为索引，即数组的下标，通过迭代循环参数依次访问数组的每个值</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 获取数组长度</span>
+<span class="token keyword">const</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+<span class="token comment">// 遍历数组</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 输出数组当前元素值和索引</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><ul><li>forEach 方法 通过数组特有的 <code>forEach()</code> 方法循环每一个元素，其中传入函数的<strong>第一个入参和第二个入参分别是当前元素的及其对应索引</strong>，在回调函数中可以进行相应的调用</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code>arr<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 输出数组元素值和索引</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>map 方法 方法 <code>map()</code> 在调用形式上与 forEach 无异，区别在于它会根据传入的函数逻辑对数组中每个元素进行处理、进而<strong>返回一个全新的数组</strong>。</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> newArr <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">item<span class="token punctuation">,</span> index</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 输出数组的元素值和索引</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 在当前元素基础上 + 1 作为新元素返回</span>
+    <span class="token keyword">return</span>  item<span class="token operator">+</span><span class="token number">1</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h3 id="增加元素" tabindex="-1"><a class="header-anchor" href="#增加元素" aria-hidden="true">#</a> 增加元素</h3><ul><li>unshift 方法 添加元素到数组的头部</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [0, 1, 2]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>push 方法 添加元素到数组的尾部</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [1, 2, 3]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>splice 方法 添加元素到数组任何位置</li></ul><p>💡 第一个入参是起始的索引值，第二个入参表示<strong>需要从起始的索引开始（包含）删除的元素个数（如果设置为 <code>0</code> 就表示不删除任何元素）</strong>，第三个入参开始表示需要添加到数组里的元素的值</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [1, 3, 2]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>示例从 <code>arr[1]</code> 开始，删掉 <code>0</code> 个元素，并且在索引为 <code>1</code> 的地方新增了值为 <code>3</code> 的元素，因为删掉的元素是 <code>0</code> 个，所以说 <code>arr[1]</code> 中原有的元素值 <code>2</code> 仍然会被保留下来；同时因为我们后面又指定了 <code>arr[1]</code> 处需要新增一个元素 <code>3</code>，那么这个 <code>3</code> 就会把原来 <code>arr[1]</code> 这个地方的元素给「挤到后面去」，这样就做到了在数组中任意位置进行元素的新增。</p><p><img src="/blog-code/assets/20200810125404680_27315.91d76cf9.png" alt="array splice"></p><h3 id="删除元素" tabindex="-1"><a class="header-anchor" href="#删除元素" aria-hidden="true">#</a> 删除元素</h3><ul><li>shift 方法 删除数组头部的元素</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [2, 3]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>pop 方法 删除数组尾部的元素</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [1, 2]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li>splice 方法 删除数组任意位置的元素</li></ul><p>💡 第一个入参是起始的索引值，第二个入参表示<strong>需要从起始的索引开始（包含）删除的元素个数（如果设置为 <code>0</code> 就表示不删除任何元素）</strong></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+arr<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// [2]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><h3 id="二维数组" tabindex="-1"><a class="header-anchor" href="#二维数组" aria-hidden="true">#</a> 二维数组</h3><p>普通常见的一维数组的元素是数字而非数组，整个数组的结构看上去像一条「线」。二维数组其实就是数组套数组，也就是<strong>每个元素都是数组</strong>，二维数组更像是一个「面」。</p><p>💡 在数学中形如这样长方阵列排列的复数或实数集合，被称为「矩阵」，因此二维数组的别名就叫<strong>矩阵</strong>。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><img src="/blog-code/assets/20200810090758932_4119.27cd9e3f.png" alt="二维数组"></p><ul><li>图示<strong>每一行，就代表着一个数组元素</strong>，如第 <code>0</code> 行就代表着数组中 <code>arr[0]</code> 这个数组元素，其内容是 <code>[1,2,3,4,5]</code></li><li>每一行中的每一列，则代表一个确切的值，如第 <code>0</code> 行第 <code>1</code> 列，就代表着数组中 <code>arr[0][1]</code> 这个元素，其值为<code>2</code>，是一个确切的 number。</li></ul><h4 id="二维数组初始化" tabindex="-1"><a class="header-anchor" href="#二维数组初始化" aria-hidden="true">#</a> 二维数组初始化</h4><p>⚠️ <code>fill()</code> 方法的局限性：当给 <code>fill()</code> 传递一个入参时，如果这个入参的类型是<strong>引用类型</strong>，那么填充的其实就是入参的<strong>引用</strong>，即所有元素都是<strong>对应了同一个引用、指向的是同一块内存空间，它们本质上是同一个数组</strong>。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 对长度为 7 的数组进行初始化，每个元素都是一个空数组</span>
+<span class="token keyword">const</span> arr <span class="token operator">=</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Array</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 修改其中一个元素</span>
+arr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+<span class="token comment">// 实际上其他元素的值也都会跟着发生改变</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><p><img src="/blog-code/assets/20200810091616563_30004.cf72496f.png" alt="fill matrix"></p><p>本着安全的原则二维数组初始化方法直接使用非常简单（而且性能也不错）的 for 循环来解决，for 循环中每一次迭代我们都通过 <code>[]</code> 创建一个新的数组，这样便不会有引用指向问题带来的尴尬。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> len <span class="token operator">=</span> arr<span class="token punctuation">.</span>length
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将数组的每一个坑位初始化为数组</span>
+    arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h4 id="二维数组的访问" tabindex="-1"><a class="header-anchor" href="#二维数组的访问" aria-hidden="true">#</a> 二维数组的访问</h4><p>需要的是两层循环访问二维数组</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 缓存外部数组的长度</span>
+<span class="token keyword">const</span> outerLen <span class="token operator">=</span> arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+<span class="token comment">// 使用两层循环遍历</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>outerLen<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 缓存内部数组的长度</span>
+  <span class="token keyword">const</span> innerLen <span class="token operator">=</span> arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>innerLen<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 输出数组的值和索引</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>💡 一维数组用 for 循环遍历只需一层循环，二维数组是两层，三维数组就是三层。依次类推 <strong>N 维数组需要 N 层循环来完成遍历</strong>。</p><h2 id="栈和队列" tabindex="-1"><a class="header-anchor" href="#栈和队列" aria-hidden="true">#</a> 栈和队列</h2><p>数组的增删操作可以说是没有任何限制的，允许我们在任何位置执行想要的操作。而栈和队列这两种运算受限的<strong>线性表</strong>完全可以把栈和队列都看作是**「特别的数组」**，它们的实现一般都要依赖于数组。</p><p>栈和队列两者的区别在于，它们各自对数组的<strong>增删</strong>操作有着不一样的限制：</p><ul><li><strong>栈 Stack</strong>：后进先出 LIFO，Last In First Out 的数据结构，只能用 <code>pop()</code> 和 <code>push()</code> 方法在尾部完成增删的数组</li><li><strong>队列 Queue</strong>：先进先出 FIFO，First In First Out 的数据结构，只能用 <code>shift()</code> 和 <code>push()</code> 方法分别在头部删除和在尾部添加元素的数组</li></ul><h3 id="栈" tabindex="-1"><a class="header-anchor" href="#栈" aria-hidden="true">#</a> 栈</h3><p>栈 Stack 是一种后进先出 LIFO，Last In First Out 的数据结构，在 JavaScript 中可以认为<strong>栈就是限制只能用 push 来添加元素，同时只能用 pop 来移除元素的一种特殊的数组</strong></p><ul><li>只允许从尾部添加元素，使用 <code>push()</code> 方法</li><li>只允许从尾部取出元素，使用 <code>pop()</code> 方法</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 初始状态</span>
+<span class="token keyword">const</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 入栈过程</span>
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;可爱多&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;巧乐兹&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&quot;光明奶砖&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 出栈过程，栈不为空时一直执行下去</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>stack<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 单纯访问栈顶部元素（不出栈）</span>
+    <span class="token keyword">const</span> top <span class="token operator">=</span> stack<span class="token punctuation">[</span>stack<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// 将顶部元素出栈</span>
+    stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 查看栈，栈空</span>
+stack<span class="token punctuation">;</span>   <span class="token comment">// []</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><h3 id="队列" tabindex="-1"><a class="header-anchor" href="#队列" aria-hidden="true">#</a> 队列</h3><p>队列 queue 是一种先进先出 FIFO，First In First Out 的数据结构，在 JavaScript 中可以认为<strong>队列就是限制只能用 push 来添加元素，同时只能用 shift 来移除元素的一种特殊的数组</strong></p><ul><li>只允许从尾部添加元素，使用方法 <code>push()</code> 方法</li><li>只允许从头部移除元素，使用方法 <code>shift()</code> 方法</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 初始状态</span>
+<span class="token keyword">const</span> queue <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 进入队列</span>
+queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&#39;Ben&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&#39;Tom&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+queue<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">&#39;Thomson&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 出队列，队列不为空时一直执行下去</span>
+<span class="token keyword">while</span><span class="token punctuation">(</span>queue<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 单纯访问队列头部元素（不出队）</span>
+    <span class="token keyword">const</span> top <span class="token operator">=</span> queque<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>top<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 出队</span>
+    queue<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 查看队列，队空</span>
+queue<span class="token punctuation">;</span>   <span class="token comment">// []</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h2 id="链表" tabindex="-1"><a class="header-anchor" href="#链表" aria-hidden="true">#</a> 链表</h2><p>链表和数组类似，是另一种线性结构的有序列表，有且仅有一个<strong>前驱</strong>、有且仅有一个<strong>后继</strong>。JS 中的链表是以嵌套的对象的形式来实现的</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token punctuation">{</span>
+    <span class="token comment">// 数据域</span>
+    val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token comment">// 指针域，指向下一个结点</span>
+    next<span class="token operator">:</span> <span class="token punctuation">{</span>
+        val<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        next<span class="token operator">:</span> <span class="token operator">...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><ul><li><strong>数据域</strong>：存储的是当前结点所存储的数据值</li><li><strong>指针域</strong>：代表下一个结点（后继结点）的引用， 有了 <code>next</code> 指针来记录后继结点的引用，每一个结点至少都能知道自己后面的元素，原本相互独立的结点之间就有了如下的联系。要想访问链表中的任何一个元素，我们都得从起点结点开始，逐个访问 next，一直访问到目标结点为止。</li></ul><p><img src="/blog-code/assets/20200810142048503_13748.799445a1.png" alt="list pivot"></p><p>💡 为了确保起点结点是可抵达的，我们有时还会设定一个 <code>head</code> 指针来专门指向链表的开始位置。</p><p><img src="/blog-code/assets/20200810142631715_21563.a97c6feb.png" alt="list head"></p><h3 id="链表和数组异同" tabindex="-1"><a class="header-anchor" href="#链表和数组异同" aria-hidden="true">#</a> 链表和数组异同</h3><p>链表和数组不同点在于：</p><ul><li>链表中数据单位的名称叫做「结点」，而结点和结点的分布<strong>在内存中可以是离散的</strong>。 <img src="/blog-code/assets/20200810141429080_14550.bd60b2ca.png" alt="linked list"></li><li>数组在内存中最为关键的一个特征，就是元素与元素之间紧紧相连，它们一般是<strong>对应一段位于自己上界和下界之间的、一段连续的内存空间</strong>。</li></ul><p><img src="/blog-code/assets/20200810141221255_22302.c568da21.png" alt="array"></p><p>正是由于数组中的元素是连续的，每个元素的内可存地址以根据其索引距离数组头部的距离来计算出来，因此对数组来说，每一个元素都可以<strong>通过数组的索引下标直接定位</strong>。</p><p>但对链表来说，元素和元素之间似乎毫无内存上的瓜葛可言，但是通过创建指针来实现元素之间的关联，每一个结点的结构都包括了两部分的内容：<strong>数据域</strong>和<strong>指针域</strong>。</p><p>💡 链表和数组的优缺点：</p><ul><li>链表的插入/删除效率较高，而访问效率较低（需要使用指针 <code>next</code> 遍历前面的元素才可以访问到目标元素）</li><li>数组的访问效率较高（直接使用索引定位访问元素），而插入效率较低（如果要在任意位置删除一个元素，那么该位置往后的所有元素，都需要往前挪一个位置；如果要在任意位置新增一个元素，那么该位置往后的所有元素也都要往后挪一个位置。）</li></ul><h3 id="链表结点的创建" tabindex="-1"><a class="header-anchor" href="#链表结点的创建" aria-hidden="true">#</a> 链表结点的创建</h3><p>定义一个构造函数用以创建链表节点</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 在使用构造函数创建结点时，传入 val （数据域对应的值内容）、指定 next （下一个链表结点）即可</span>
+<span class="token keyword">const</span> node1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> node2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+node1<span class="token punctuation">.</span>next <span class="token operator">=</span> node2<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><img src="/blog-code/assets/20200810142949999_1970.14462d84.png" alt="list node"></p><h3 id="链表元素的添加" tabindex="-1"><a class="header-anchor" href="#链表元素的添加" aria-hidden="true">#</a> 链表元素的添加</h3><p>💡 链表的结点间关系是通过 <code>next</code> 指针来维系的，因此链表元素的添加本质上都是在围绕 <code>next</code> 指针做文章。</p><ul><li>直接在链表尾部添加结点，改变最后一个 <code>next</code> 指针即可</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> node3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+node2<span class="token punctuation">.</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="/blog-code/assets/20200810143621289_5334.87af98da.png" alt="list append node"></p><ul><li>在任意两结点间插入一个新结点，需要变更的是<strong>前驱结点</strong>和<strong>目标结点</strong>的 <code>next</code> 指针指向</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 创建结点</span>
+<span class="token keyword">const</span> node3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 修改前驱结点和目标结点的指针域，将结点插入到两个结点间</span>
+<span class="token comment">// 把 node3 的 next 指针指向 node2</span>
+node3<span class="token punctuation">.</span>next <span class="token operator">=</span> node1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token comment">// 把 node1 的 next 指针修改为指向 node3</span>
+node1<span class="token punctuation">.</span>next <span class="token operator">=</span> node3<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><img src="/blog-code/assets/20200810144133969_14530.0a2dc610.png" alt="list insert node"></p><h3 id="链表元素的删除" tabindex="-1"><a class="header-anchor" href="#链表元素的删除" aria-hidden="true">#</a> 链表元素的删除</h3><p>💡 链表元素的删除也是非常高频的操作，⚠️ 删除的标准是：在链表的遍历过程中，无法再遍历到某个结点的存在。我们直接让需要删除的目标结点的的前驱结点 <code>next</code> 指针跳过它，指向需要删除的目标结点的后继即可，因此仍然把重心放在对 <code>next</code> 指针的调整上。当一个结点完全不可抵达时， JavaScript 的垃圾回收器就会自动回收掉。</p><p>💡 涉及链表删除操作的题目中，重点不是定位目标结点，而是<strong>定位目标结点的前驱结点</strong>。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 删除 node3 结点</span>
+node1<span class="token punctuation">.</span>next <span class="token operator">=</span> node3<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+
+<span class="token comment">// 实现相同功能的另一种写法，只需要拿到前驱结点 node1 即可</span>
+<span class="token comment">// 利用 node1 定位 node3 及其后继结点</span>
+<span class="token keyword">const</span> target <span class="token operator">=</span> node1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token comment">// 重定向</span>
+node1<span class="token punctuation">.</span>next <span class="token operator">=</span> target<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p><img src="/blog-code/assets/20200810145112241_25894.eaae7f82.png" alt="list delete node"></p><h2 id="树" tabindex="-1"><a class="header-anchor" href="#树" aria-hidden="true">#</a> 树</h2><p>数据结构中的树是对现实世界中树的一层简化：</p><ul><li>把树根抽象为「根结点」</li><li>树枝抽象为「边」</li><li>树枝的两个端点抽象为「结点」</li><li>树叶抽象为「叶子结点」</li></ul><p><img src="/blog-code/assets/20200811093248984_26365.32b0bd20.png" alt="tree"></p><p>把这棵抽象后的树颠倒一下，就得到了计算机中的树结构。<strong>树的层次计算规则：根结点所在的那一层记为第一层，其子结点所在的就是第二层，以此类推。</strong></p><p><img src="/blog-code/assets/20200811093559640_18965.8c756b2a.png" alt="tree"></p><p>相关概念：</p><ul><li>结点高度：叶子结点高度记为 1，每向上一层高度就加 1，逐层向上累加至目标结点时，所得到的的值就是目标结点的高度。</li><li>树的高度：树中结点的最大高度，称为「树的高度」。</li><li>度：一个结点开叉出去多少个子树，被记为结点的「度」。比如上图中根结点的度就是 <code>3</code></li><li>叶子结点：叶子结点就是度为 <code>0</code> 的结点，因为它们是最后一层的结点</li></ul><h3 id="二叉树" tabindex="-1"><a class="header-anchor" href="#二叉树" aria-hidden="true">#</a> 二叉树</h3><p>二叉树是指满足以下要求的树：它可以没有根结点，作为一棵空树存在；如果它不是空树，那么必须由根结点、左子树和右子树组成，<strong>且左右子树都是二叉树</strong>。</p><p><img src="/blog-code/assets/20200811100330184_22834.035c5a3b.png" alt="Binary Tree"></p><p>⚠️ <strong>二叉树不能被简单定义为每个结点的度都是 2 的树</strong>，因为普通的树并不会区分左子树和右子树，但与之区别的是在二叉树中，左右子树的位置是严格约定、不能交换的。</p><h3 id="二叉树实现" tabindex="-1"><a class="header-anchor" href="#二叉树实现" aria-hidden="true">#</a> 二叉树实现</h3><p>在 JS 中，二叉树使用对象来定义。它的结构分为三块：</p><ul><li>数据域</li><li>左侧子结点（左子树根结点）的引用</li><li>右侧子结点（右子树根结点）的引用</li></ul><p>通过构造函数创建结点，把左侧子结点和右侧子结点都预置为空，再设置结点的左右引用即可创建二叉树</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 二叉树结点的构造函数</span>
+<span class="token keyword">function</span> <span class="token function">TreeNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 新建一个二叉树结点</span>
+<span class="token keyword">const</span> node <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// 然后可以基于这个结点为根结点，我们可以通过给 left/right 赋值拓展其子树信息，延展出一棵二叉树</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p><img src="/blog-code/assets/20200811101809271_22176.84fb45c8.png" alt="Binary Tree Constructor"></p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">更新时间: </span><span class="meta-item-info">2021/7/10 上午7:02:33</span></div><!----></footer><!----><!--[--><!--]--></main></div><div style="width:0px;" class="catalog-container absolute top-0 right-0 h-full hidden lg:block"><div class="headings-container sticky top-36" data-v-c28348e0><ul class="
+        max-w-max
+        m-2
+        pl-7
+        xl:pl-16
+        2xl:pl-20
+        py-4
+        opacity-50
+        hover:opacity-100
+        transition-all
+        duration-300
+      " data-v-c28348e0><!--[--><!--]--></ul></div></div><div style="display:none;" tabindex="0" class="
+          sidebar-container
+          fixed
+          inset-y-0
+          left-0
+          z-20
+          lg:hidden
+          opacity-10
+          hover:opacity-95
+        "><div class="headings-container
+      px-2
+      space-y-2
+      transition-all
+      duration-300 py-20" data-v-6eed9461><!--[--><!--]--></div></div></div><footer class="bg-gray-200 p-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-center" data-v-2981188c><div class="flex justify-center md:justify-start items-center" data-v-2981188c><a class="p-2 hover:bg-gray-300 rounded-md" href="https://benbinbin.github.io/" target="_blank" data-v-2981188c><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full" data-v-2981188c></a></div><div class="text-center space-y-0.5" data-v-2981188c><p class="text-sm text-gray-600" data-v-2981188c> ©2021 <span class="author" data-v-2981188c>Benbinbin</span>. All Right Reserved. </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 除特殊说明外，本站的文章遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" class="text-blue-400" data-v-2981188c>CC-BY-SA-4.0</a> 协议 </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 网站主题采用 <a href="https://github.com/Benbinbin/two-dishes-one-fish" target="_blank" class="text-blue-400" data-v-2981188c>Two Dishes One Fish</a></p></div><div class="
+        btn-container
+        flex
+        justify-center
+        md:justify-end
+        items-center
+        space-x-0.5
+      " data-v-2981188c><!--[--><a class="p-2 hover:bg-gray-300 rounded-md" href="mailto:benthomsonbin@gmail.com" target="" data-v-2981188c><img src="/blog-code/images/icons/email.svg" alt="email" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://github.com/Benbinbin" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/github.svg" alt="github" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://juejin.cn/user/3175045314389278/posts" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/juejin.svg" alt="juejin" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://dribbble.com/BinBinDesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/dribbble.svg" alt="dribbble" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://twitter.com/Benbinbin_fun" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/twitter.svg" alt="twitter" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://weibo.com/binbindesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/weibo.svg" alt="weibo" class="w-auto h-6" data-v-2981188c></a><!--]--></div></footer></div><!--]--></div>
+    <script type="module" src="/blog-code/assets/app.93fa4a4f.js" defer></script>
+  </body>
+</html>

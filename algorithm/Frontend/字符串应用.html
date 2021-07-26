@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/blog-code/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css"><title>字符串应用 | Blog</title><meta name="description" content="A blog and knowledge management system about coding."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="modulepreload" href="/blog-code/assets/app.93fa4a4f.js"><link rel="modulepreload" href="/blog-code/assets/字符串应用.html.fc98a9d0.js"><link rel="modulepreload" href="/blog-code/assets/字符串应用.html.ea2451eb.js">
+    <link rel="stylesheet" href="/blog-code/assets/style.cee61b43.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="min-h-screen flex flex-col"><nav class="px-4 sm:px-8 py-2 flex justify-between items-center sticky top-0 z-30 bg-white"><div class="left flex items-center space-x-0.5"><!--[--><button class="
+            catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden
+          " class="text-gray-400 hover:bg-gray-100 catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--><a class="avatar p-2 hover:bg-gray-100 rounded-md" href="/blog-code/#"><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full"></a></div><div class="right hidden sm:flex items-center space-x-0.5"><!--[--><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">All</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Git</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Github</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Docker</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Algorithm</button><!--]--><!--[--><button class="
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block
+          " class="text-gray-900 bg-gray-100 hover:bg-gray-200 p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--></div><div class="more-container sm:hidden relative"><button style="" class="p-2 select-none hover:bg-gray-100 rounded-md text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></button><button style="display:none;" class="p-2 select-none hover:bg-gray-100 rounded-md text-red-400 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></button><div style="display:none;" class="
+          more-modal
+          p-2
+          absolute
+          top-10
+          right-0
+          z-10
+          flex flex-col
+          space-y-2
+          bg-gray-100
+          rounded-md
+          opacity-90
+        "><!--[--><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">All</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Git</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Github</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Docker</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Algorithm</button><!--]--></div></div></nav><div class="relative flex-grow"><div class="theme-container no-navbar no-sidebar"><!----><div class="sidebar-mask"></div><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="字符串应用" tabindex="-1"><a class="header-anchor" href="#字符串应用" aria-hidden="true">#</a> 字符串应用</h1><h2 id="反转字符串" tabindex="-1"><a class="header-anchor" href="#反转字符串" aria-hidden="true">#</a> 反转字符串</h2><p>利用 <code>split()</code> 和 <code>join()</code> 方法实现字符串和数组的转换，期间调用 JavaScript 内置翻转数组元素序列的 API 方法 <code>reverse()</code> 实现翻转字符串</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token string">&quot;reverse&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> res <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&#39;&#39;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&#39;&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// esrever</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>一个应用是判断字符串是否为<strong>回文字符串</strong>（即字符串正着读和倒着读都一样），可以根据定义判断字符串反转后是否与原字符串相等；或者从中间位置「劈开」，判断两个子串在内容上是<strong>完全对称</strong>的。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 方法一</span>
+<span class="token keyword">function</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> res <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">&#39;&#39;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">&#39;&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> str <span class="token operator">===</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 方法二</span>
+<span class="token keyword">function</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> len <span class="token operator">=</span> str<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+    <span class="token comment">// 遍历前半部分，判断和后半部分是否对称</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>len<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!==</span> str<span class="token punctuation">[</span>len<span class="token operator">-</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="回文字符串的衍生问题" tabindex="-1"><a class="header-anchor" href="#回文字符串的衍生问题" aria-hidden="true">#</a> 回文字符串的衍生问题</h2><blockquote><p>真题描述：给定一个非空字符串 <code>s</code>，最多删除一个字符。判断是否能成为回文字符串。</p><p>示例 1：输入: <code>&quot;aba&quot;</code> 输出: <code>true</code> 示例 2：输入: <code>&quot;abca&quot;</code> 输出: <code>true</code> 解释: 你可以删除 <code>c</code> 字符。 💡 字符串只包含从 a-z 的小写字母。字符串的最大长度是 50000。</p></blockquote><p>字符串题干中若有「回文」关键字，那么利用其对称性 和 双指针方法，足以解决大部分的回文字符串衍生问题。</p><p>对于该问题首先是初始化两个指针，一个指向字符串头部，另一个指向尾部</p><p><img src="/blog-code/assets/20200817100208470_29101.a8de4973.png" alt="init pointer"></p><p>如果两个指针所指的字符恰好相等，那么这两个字符就符合了回文字符串对对称性的要求，跳过它们往下走即可。如果两个指针所指的字符串不等，那么就意味着不对称发生了，可以删掉其中一个数，因此我们可以分别对左指针字符和右指针字符尝试进行「跳过」，看看区间在 <code>[left+1, right]</code> 或 <code>[left, right-1]</code> 的字符串是否回文</p><p><img src="/blog-code/assets/20200817100340034_15240.c3ab3a4b.png" alt="skip left"></p><p>假如我们跳过了 <code>b</code>，<code>[left+1, right]</code> 的区间就是 <code>[2, 2]</code>，它对应 <code>c</code> 这个字符，单个字符一定回文。这样一来，删掉 <code>b</code> 之后，左右指针所指的内部区间是回文的，外部区间也是回文的，即整个字符串就是一个回文字符串了。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">validPalindrome</span><span class="token punctuation">(</span><span class="token parameter">s</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> len <span class="token operator">=</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token comment">// 初始化左右指针</span>
+  <span class="token keyword">let</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> r <span class="token operator">=</span> len <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token comment">// 从字符串两头逼近字符串中间，遍历每个前后相应字符是否相等</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>l<span class="token operator">&lt;</span>r <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">===</span> s<span class="token punctuation">[</span>r<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    l<span class="token operator">++</span><span class="token punctuation">;</span>
+    r<span class="token operator">--</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 如果出现前后不相等的字符可以尝试两种跳过的方式</span>
+  <span class="token comment">// 尝试跳过左侧元素</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isPalindrome</span><span class="token punctuation">(</span>l<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> r<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 尝试跳过右侧元素</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">isPalindrome</span><span class="token punctuation">(</span>l<span class="token punctuation">,</span> r<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 判断字符串是否为回文字符串</span>
+  <span class="token keyword">function</span> <span class="token function">isPalindrome</span><span class="token punctuation">(</span><span class="token parameter">sl<span class="token punctuation">,</span> sr</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>sl<span class="token operator">&lt;</span>sr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>sl<span class="token punctuation">]</span> <span class="token operator">!==</span> s<span class="token punctuation">[</span>sr<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 默认返回 false</span>
+  <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><h2 id="正则表达式" tabindex="-1"><a class="header-anchor" href="#正则表达式" aria-hidden="true">#</a> 正则表达式</h2><blockquote><p>真题描述： 设计一个支持以下两种操作的数据结构：</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">void</span> <span class="token function">addWord</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+bool <span class="token function">search</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>其中 <code>search(word)</code> 可以搜索文字或正则表达式字符串，字符串只包含字母 <code>.</code> 或 a-z 。<code>.</code> 表示任何一个字母。</p><p>示例：</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token function">addWord</span><span class="token punctuation">(</span><span class="token string">&quot;bad&quot;</span><span class="token punctuation">)</span>
+<span class="token function">addWord</span><span class="token punctuation">(</span><span class="token string">&quot;dad&quot;</span><span class="token punctuation">)</span>
+<span class="token function">addWord</span><span class="token punctuation">(</span><span class="token string">&quot;mad&quot;</span><span class="token punctuation">)</span>
+<span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;pad&quot;</span><span class="token punctuation">)</span>   <span class="token comment">// false</span>
+<span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;bad&quot;</span><span class="token punctuation">)</span>   <span class="token comment">// true</span>
+<span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;.ad&quot;</span><span class="token punctuation">)</span>   <span class="token comment">// true</span>
+<span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;b..&quot;</span><span class="token punctuation">)</span>   <span class="token comment">// true</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>💡 你可以假设所有单词都是由小写字母 a-z 组成的。</p></blockquote><p>创建一个类支持方法 <code>addWord()</code> 和 <code>search()</code>，由于字符串既可以被添加、又可以被搜索，因此添加时一定要被存起来，因为需要被检索，可以考虑以字符串的长度为 <code>key</code>，相同长度的字符串存在一个数组中，这样可以提高我们后续定位的效率。</p><p><code>search()</code> 方法既可以搜索文字，又可以搜索正则表达式。因此我们在搜索前需要基于用户的输入创建正则表达式对象，然后使用正则表达式对象方法 <code>reg.test(str)</code> 匹配字符串，可以基于所需匹配字符串的长度作为 <code>key</code> 直接定位需要遍历的字符串数组，用 <code>some()</code> 方法来遍历数组中的字符并返回一个布尔值。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * 构造函数
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">WordDictionary</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 初始化一个对象字面量，承担 Map 的角色</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>words <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token doc-comment comment">/**
+  添加字符串的方法
+ */</span>
+
+<span class="token class-name">WordDictionary</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">addWord</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">word</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 若该字符串对应长度的数组已经存在，则只做添加</span>
+  <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>words<span class="token punctuation">[</span>word<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>words<span class="token punctuation">[</span>word<span class="token punctuation">.</span>length<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 若该字符串对应长度的数组还不存在，则先创建</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>words<span class="token punctuation">[</span>word<span class="token punctuation">.</span>length<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span>word<span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token doc-comment comment">/**
+  搜索字符串的方法
+ */</span>
+
+<span class="token class-name">WordDictionary</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">search</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">word</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> len <span class="token operator">=</span> word<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+  <span class="token comment">// 若该字符串长度在 Map 中对应的数组根本不存在，则可判断该字符串不存在</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>words<span class="token punctuation">[</span>len<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> reg <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span>word<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>words<span class="token punctuation">[</span>len<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token parameter">item</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> word <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WordDictionary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+word<span class="token punctuation">.</span><span class="token function">addWord</span><span class="token punctuation">(</span><span class="token string">&quot;bad&quot;</span><span class="token punctuation">)</span>
+word<span class="token punctuation">.</span><span class="token function">addWord</span><span class="token punctuation">(</span><span class="token string">&quot;dad&quot;</span><span class="token punctuation">)</span>
+word<span class="token punctuation">.</span><span class="token function">addWord</span><span class="token punctuation">(</span><span class="token string">&quot;mad&quot;</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>word<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;pad&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// false</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>word<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;bad&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>word<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;.ad&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>word<span class="token punctuation">.</span><span class="token function">search</span><span class="token punctuation">(</span><span class="token string">&quot;b..&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// true</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">更新时间: </span><span class="meta-item-info">2021/7/10 上午7:02:33</span></div><!----></footer><!----><!--[--><!--]--></main></div><div style="width:0px;" class="catalog-container absolute top-0 right-0 h-full hidden lg:block"><div class="headings-container sticky top-36" data-v-c28348e0><ul class="
+        max-w-max
+        m-2
+        pl-7
+        xl:pl-16
+        2xl:pl-20
+        py-4
+        opacity-50
+        hover:opacity-100
+        transition-all
+        duration-300
+      " data-v-c28348e0><!--[--><!--]--></ul></div></div><div style="display:none;" tabindex="0" class="
+          sidebar-container
+          fixed
+          inset-y-0
+          left-0
+          z-20
+          lg:hidden
+          opacity-10
+          hover:opacity-95
+        "><div class="headings-container
+      px-2
+      space-y-2
+      transition-all
+      duration-300 py-20" data-v-6eed9461><!--[--><!--]--></div></div></div><footer class="bg-gray-200 p-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-center" data-v-2981188c><div class="flex justify-center md:justify-start items-center" data-v-2981188c><a class="p-2 hover:bg-gray-300 rounded-md" href="https://benbinbin.github.io/" target="_blank" data-v-2981188c><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full" data-v-2981188c></a></div><div class="text-center space-y-0.5" data-v-2981188c><p class="text-sm text-gray-600" data-v-2981188c> ©2021 <span class="author" data-v-2981188c>Benbinbin</span>. All Right Reserved. </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 除特殊说明外，本站的文章遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" class="text-blue-400" data-v-2981188c>CC-BY-SA-4.0</a> 协议 </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 网站主题采用 <a href="https://github.com/Benbinbin/two-dishes-one-fish" target="_blank" class="text-blue-400" data-v-2981188c>Two Dishes One Fish</a></p></div><div class="
+        btn-container
+        flex
+        justify-center
+        md:justify-end
+        items-center
+        space-x-0.5
+      " data-v-2981188c><!--[--><a class="p-2 hover:bg-gray-300 rounded-md" href="mailto:benthomsonbin@gmail.com" target="" data-v-2981188c><img src="/blog-code/images/icons/email.svg" alt="email" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://github.com/Benbinbin" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/github.svg" alt="github" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://juejin.cn/user/3175045314389278/posts" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/juejin.svg" alt="juejin" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://dribbble.com/BinBinDesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/dribbble.svg" alt="dribbble" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://twitter.com/Benbinbin_fun" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/twitter.svg" alt="twitter" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://weibo.com/binbindesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/weibo.svg" alt="weibo" class="w-auto h-6" data-v-2981188c></a><!--]--></div></footer></div><!--]--></div>
+    <script type="module" src="/blog-code/assets/app.93fa4a4f.js" defer></script>
+  </body>
+</html>

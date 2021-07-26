@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/blog-code/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css"><title>Git 样式指南 | Blog</title><meta name="description" content="A blog and knowledge management system about coding."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="modulepreload" href="/blog-code/assets/app.93fa4a4f.js"><link rel="modulepreload" href="/blog-code/assets/Git代码风格指南.html.3b9bf750.js"><link rel="modulepreload" href="/blog-code/assets/Git代码风格指南.html.f6c9d633.js">
+    <link rel="stylesheet" href="/blog-code/assets/style.cee61b43.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="min-h-screen flex flex-col"><nav class="px-4 sm:px-8 py-2 flex justify-between items-center sticky top-0 z-30 bg-white"><div class="left flex items-center space-x-0.5"><!--[--><button class="
+            catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden
+          " class="text-gray-400 hover:bg-gray-100 catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--><a class="avatar p-2 hover:bg-gray-100 rounded-md" href="/blog-code/#"><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full"></a></div><div class="right hidden sm:flex items-center space-x-0.5"><!--[--><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">All</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Git</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Github</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Docker</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Algorithm</button><!--]--><!--[--><button class="
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block
+          " class="text-gray-900 bg-gray-100 hover:bg-gray-200 p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--></div><div class="more-container sm:hidden relative"><button style="" class="p-2 select-none hover:bg-gray-100 rounded-md text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></button><button style="display:none;" class="p-2 select-none hover:bg-gray-100 rounded-md text-red-400 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></button><div style="display:none;" class="
+          more-modal
+          p-2
+          absolute
+          top-10
+          right-0
+          z-10
+          flex flex-col
+          space-y-2
+          bg-gray-100
+          rounded-md
+          opacity-90
+        "><!--[--><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">All</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Git</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Github</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Docker</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Algorithm</button><!--]--></div></div></nav><div class="relative flex-grow"><div class="theme-container no-navbar no-sidebar"><!----><div class="sidebar-mask"></div><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="git-样式指南" tabindex="-1"><a class="header-anchor" href="#git-样式指南" aria-hidden="true">#</a> Git 样式指南</h1><h2 id="提交说明-commit-messages" tabindex="-1"><a class="header-anchor" href="#提交说明-commit-messages" aria-hidden="true">#</a> 提交说明 commit messages</h2><p>参考：<a href="./attachments/git-commit-message-guide-CN.pdf">Git 提交信息样式指南</a> | <a href="https://s3.cn-north-1.amazonaws.com.cn/static-documents/nd001/Udacity+Nanodegree+Style+Guide_CSS_EN.pdf" target="_blank" rel="noopener noreferrer">英文版</a></p><p>提交说明 commit messages 对于解释你为什么要这样修改代码至关重要。不仅供同事或协作者查看，还供你自己将来查看</p><p>格式</p><div class="language-markdown ext-md line-numbers-mode"><pre class="language-markdown"><code>类型：主题
+
+正文
+
+脚注
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><ul><li><code>类型</code> 提示该次提交代码的主要功能，常见类型： <ul><li><code>feature</code> 新功能</li><li><code>fix</code> 错误修复</li><li><code>docs</code> 文档修改</li><li><code>style</code> 格式、分号缺失等，代码无变动</li><li><code>refactor</code> 生产代码重构</li><li><code>test</code> 测试添加、测试重构等，生产代码无变动</li><li><code>chore</code> 构建任务更新、程序包管理器配置等，生产代码无变动</li></ul></li><li><code>主题</code> 简要说明更改的内容。不应超过 50 个字符，首字母大写，不以句点结尾。不建议使用“修复”或“执行了某些操作”这类字眼</li><li><code>正文</code> 更详细地描述你进行更改的原因。每行通常包含 72 个字符左右（确保在命令行上使用 git 时，能够在终端窗口中显示出来）。确保主题和正文之间有一个空行。当需要创建列表时，也可以使用星号 <code>*</code> 或短横线 <code>-</code> 添加项目符号。有些提交的说明中不需要正文。例如，如果更正一个拼写错误，可以只有一个主题行。</li><li><code>脚注</code> 通常用于指示此提交解决哪些问题或错误</li></ul><div class="language-markdown ext-md line-numbers-mode"><pre class="language-markdown"><code>feature: 用 50 个或更少字符总结改动
+
+如有必要，提供更详细的阐释文本。将其限制在 72 个字符左右。
+有些情况下，第一行被视为提交的主题，其余文本被视为正文。
+将摘要与正文分隔开的空行至关重要（除非你完全省略正文）；如果不分隔摘要和正文，会使 <span class="token code-snippet code keyword">`log`</span>、<span class="token code-snippet code keyword">`shortlog`</span> 和 <span class="token code-snippet code keyword">`rebase`</span> 等工具可能无法识别。
+
+解释此次提交要解决的问题。
+重点是为什么要进行此次改动而不是如何改动（代码会说明这一点）。
+此次改动是否有任何副作用或其他不太直观的后果？可在此处解释这些方面。
+
+空行后面可以有更多段落。
+
+ <span class="token list punctuation">-</span> 还可以使用项目符号分项列出
+
+ <span class="token list punctuation">-</span> 通常使用连字符或星号作为项目符号，前面有一个空格，中间是一些空行，但惯例不尽相同
+
+如果你使用问题跟踪器，请在底部提供对问题的引用，
+例如：
+解决：# 123
+另请参见：# 456、# 789
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>💡 如果你从事的是一个开源项目，请务必遵守该项目的说明格式。这会让维护者的工作更轻松，并增加你的合并请求被接受的机会。</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">更新时间: </span><span class="meta-item-info">2021/7/6 上午6:20:41</span></div><!----></footer><!----><!--[--><!--]--></main></div><div style="width:0px;" class="catalog-container absolute top-0 right-0 h-full hidden lg:block"><div class="headings-container sticky top-36" data-v-c28348e0><ul class="
+        max-w-max
+        m-2
+        pl-7
+        xl:pl-16
+        2xl:pl-20
+        py-4
+        opacity-50
+        hover:opacity-100
+        transition-all
+        duration-300
+      " data-v-c28348e0><!--[--><!--]--></ul></div></div><div style="display:none;" tabindex="0" class="
+          sidebar-container
+          fixed
+          inset-y-0
+          left-0
+          z-20
+          lg:hidden
+          opacity-10
+          hover:opacity-95
+        "><div class="headings-container
+      px-2
+      space-y-2
+      transition-all
+      duration-300 py-20" data-v-6eed9461><!--[--><!--]--></div></div></div><footer class="bg-gray-200 p-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-center" data-v-2981188c><div class="flex justify-center md:justify-start items-center" data-v-2981188c><a class="p-2 hover:bg-gray-300 rounded-md" href="https://benbinbin.github.io/" target="_blank" data-v-2981188c><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full" data-v-2981188c></a></div><div class="text-center space-y-0.5" data-v-2981188c><p class="text-sm text-gray-600" data-v-2981188c> ©2021 <span class="author" data-v-2981188c>Benbinbin</span>. All Right Reserved. </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 除特殊说明外，本站的文章遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" class="text-blue-400" data-v-2981188c>CC-BY-SA-4.0</a> 协议 </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 网站主题采用 <a href="https://github.com/Benbinbin/two-dishes-one-fish" target="_blank" class="text-blue-400" data-v-2981188c>Two Dishes One Fish</a></p></div><div class="
+        btn-container
+        flex
+        justify-center
+        md:justify-end
+        items-center
+        space-x-0.5
+      " data-v-2981188c><!--[--><a class="p-2 hover:bg-gray-300 rounded-md" href="mailto:benthomsonbin@gmail.com" target="" data-v-2981188c><img src="/blog-code/images/icons/email.svg" alt="email" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://github.com/Benbinbin" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/github.svg" alt="github" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://juejin.cn/user/3175045314389278/posts" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/juejin.svg" alt="juejin" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://dribbble.com/BinBinDesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/dribbble.svg" alt="dribbble" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://twitter.com/Benbinbin_fun" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/twitter.svg" alt="twitter" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://weibo.com/binbindesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/weibo.svg" alt="weibo" class="w-auto h-6" data-v-2981188c></a><!--]--></div></footer></div><!--]--></div>
+    <script type="module" src="/blog-code/assets/app.93fa4a4f.js" defer></script>
+  </body>
+</html>

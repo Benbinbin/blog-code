@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/blog-code/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css"><title>二叉树遍历 | Blog</title><meta name="description" content="A blog and knowledge management system about coding."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="modulepreload" href="/blog-code/assets/app.93fa4a4f.js"><link rel="modulepreload" href="/blog-code/assets/二叉树遍历.html.3618f458.js"><link rel="modulepreload" href="/blog-code/assets/二叉树遍历.html.c5143b06.js">
+    <link rel="stylesheet" href="/blog-code/assets/style.cee61b43.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="min-h-screen flex flex-col"><nav class="px-4 sm:px-8 py-2 flex justify-between items-center sticky top-0 z-30 bg-white"><div class="left flex items-center space-x-0.5"><!--[--><button class="
+            catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden
+          " class="text-gray-400 hover:bg-gray-100 catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--><a class="avatar p-2 hover:bg-gray-100 rounded-md" href="/blog-code/#"><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full"></a></div><div class="right hidden sm:flex items-center space-x-0.5"><!--[--><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">All</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Git</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Github</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Docker</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Algorithm</button><!--]--><!--[--><button class="
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block
+          " class="text-gray-900 bg-gray-100 hover:bg-gray-200 p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--></div><div class="more-container sm:hidden relative"><button style="" class="p-2 select-none hover:bg-gray-100 rounded-md text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></button><button style="display:none;" class="p-2 select-none hover:bg-gray-100 rounded-md text-red-400 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></button><div style="display:none;" class="
+          more-modal
+          p-2
+          absolute
+          top-10
+          right-0
+          z-10
+          flex flex-col
+          space-y-2
+          bg-gray-100
+          rounded-md
+          opacity-90
+        "><!--[--><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">All</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Git</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Github</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Docker</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Algorithm</button><!--]--></div></div></nav><div class="relative flex-grow"><div class="theme-container no-navbar no-sidebar"><!----><div class="sidebar-mask"></div><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="二叉树遍历" tabindex="-1"><a class="header-anchor" href="#二叉树遍历" aria-hidden="true">#</a> 二叉树遍历</h1><p>以一定的顺序规则，逐个访问二叉树的所有结点，这个过程就是二叉树的遍历。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 构造二叉树</span>
+<span class="token keyword">function</span> <span class="token function">TreeNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// root</span>
+<span class="token keyword">const</span> root <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token string">&#39;A&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// left node</span>
+<span class="token keyword">const</span> leftNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token string">&#39;B&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+root<span class="token punctuation">.</span>left <span class="token operator">=</span> leftNode<span class="token punctuation">;</span>
+leftNode<span class="token punctuation">.</span>left <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token string">&#39;D&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+leftNode<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token string">&#39;E&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// right node</span>
+<span class="token keyword">const</span> rightNode <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token string">&#39;C&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+root<span class="token punctuation">.</span>right <span class="token operator">=</span> rightNode<span class="token punctuation">;</span>
+rightNode<span class="token punctuation">.</span>right <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TreeNode</span><span class="token punctuation">(</span><span class="token string">&#39;F&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 二叉树数据结构</span>
+<span class="token comment">// root = {</span>
+<span class="token comment">//   val: &quot;A&quot;,</span>
+<span class="token comment">//   left: {</span>
+<span class="token comment">//     val: &quot;B&quot;,</span>
+<span class="token comment">//     left: {</span>
+<span class="token comment">//       val: &quot;D&quot;</span>
+<span class="token comment">//     },</span>
+<span class="token comment">//     right: {</span>
+<span class="token comment">//       val: &quot;E&quot;</span>
+<span class="token comment">//     }</span>
+<span class="token comment">//   },</span>
+<span class="token comment">//   right: {</span>
+<span class="token comment">//     val: &quot;C&quot;,</span>
+<span class="token comment">//     right: {</span>
+<span class="token comment">//       val: &quot;F&quot;</span>
+<span class="token comment">//     }</span>
+<span class="token comment">//   }</span>
+<span class="token comment">// };</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br></div></div><p>由于二叉树都是由三部分组成的：根节点、左子树、右子树。而且左右子树都是二叉树，因此可以将子树也「分解」看作由这个基本结构组成的。因此对树的遍历，就可以看做是对这三个部分的遍历。</p><p><img src="/blog-code/assets/20200811110421978_1692.1920ae56.png" alt="structure of binary tree"></p><p>按照实现方式的不同，遍历方式又可以分为以下两种：</p><ul><li><strong>递归遍历</strong>：基于根结点的遍历分别被安排在了首要位置、中间位置和最后位置（根结点的遍历的时机），可以将递归遍历方法分为先序遍历、中序遍历、后序遍历 <ul><li><strong>先序遍历</strong>：根结点 -&gt; 左子树 -&gt; 右子树</li><li><strong>中序遍历</strong>：左子树 -&gt; 根结点 -&gt; 右子树</li><li><strong>后序遍历</strong>：左子树 -&gt; 右子树 -&gt; 根结点</li></ul></li><li><strong>迭代遍历</strong>：层次遍历</li></ul><h2 id="递归遍历" tabindex="-1"><a class="header-anchor" href="#递归遍历" aria-hidden="true">#</a> 递归遍历</h2><p>💡 编程语言中，函数<strong>直接或间接调用函数本身</strong>，则该函数称为递归函数。</p><h3 id="先序遍历" tabindex="-1"><a class="header-anchor" href="#先序遍历" aria-hidden="true">#</a> 先序遍历</h3><p><img src="/blog-code/assets/20200811110445154_24920.4d347ff7.png" alt="先序遍历规则"></p><p><img src="/blog-code/assets/20200811110502673_30601.7d062c0a.gif" alt="先序遍历过程演示"></p><ul><li>先序遍历的<strong>递归式</strong>：每一次重复的内容是 <code>根结点 -&gt; 左子树 -&gt; 右子树</code></li><li>先序遍历的<strong>递归边界</strong>：当我们发现遍历的目标树为空的时候，停止递归调用</li></ul><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 先序遍历函数</span>
+<span class="token comment">// 入参是树的根结点对象</span>
+funciton <span class="token function">preorder</span><span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 输出当前遍历的结点值</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;当前遍历的结点值是：&#39;</span><span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 递归遍历左子树</span>
+        <span class="token function">preorder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 递归遍历右子树</span>
+        <span class="token function">preorder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 递归边界，当结点为空时返回</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 运行结果</span>
+<span class="token function">preorder</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 当前遍历的结点值是： A</span>
+<span class="token comment">// 当前遍历的结点值是： B</span>
+<span class="token comment">// 当前遍历的结点值是： D</span>
+<span class="token comment">// 当前遍历的结点值是： E</span>
+<span class="token comment">// 当前遍历的结点值是： C</span>
+<span class="token comment">// 当前遍历的结点值是： F</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="中序遍历" tabindex="-1"><a class="header-anchor" href="#中序遍历" aria-hidden="true">#</a> 中序遍历</h3><p><img src="/blog-code/assets/20200811113137553_31671.3092cee8.png" alt="中序遍历规则"></p><p><img src="/blog-code/assets/20200811113220124_11552.3895153e.gif" alt="中序遍历过程演示"></p><ul><li>中序遍历的<strong>递归式</strong>：每一次重复的内容是 <code>左子树 -&gt; 根结点 -&gt; 右子树</code></li><li>中序遍历的<strong>递归边界</strong>：当我们发现遍历的目标树为空的时候，停止递归调用</li></ul><p>💡 与先序遍历的唯一发生改变的是递归式里调用递归函数的顺序，<strong>左子树的访问会优先于根结点</strong></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 中序遍历函数</span>
+<span class="token comment">// 入参是树的根结点对象</span>
+<span class="token keyword">function</span> <span class="token function">inOrder</span><span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 递归遍历左子树</span>
+    <span class="token function">inOrder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 输出当前遍历的结点值</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;当前遍历的结点值是：&#39;</span><span class="token punctuation">,</span> root<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 递归遍历右子树</span>
+    <span class="token function">inOrder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 递归边界，当结点为空时返回</span>
+    <span class="token keyword">return</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 运行结果</span>
+<span class="token function">inOrder</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 当前遍历的结点值是： D</span>
+<span class="token comment">// 当前遍历的结点值是： B</span>
+<span class="token comment">// 当前遍历的结点值是： E</span>
+<span class="token comment">// 当前遍历的结点值是： A</span>
+<span class="token comment">// 当前遍历的结点值是： C</span>
+<span class="token comment">// 当前遍历的结点值是： F</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="后序遍历" tabindex="-1"><a class="header-anchor" href="#后序遍历" aria-hidden="true">#</a> 后序遍历</h3><p><img src="/blog-code/assets/20200811114346262_26747.ff480a8d.png" alt="后序遍历规则"></p><p><img src="/blog-code/assets/20200811114430679_27482.025f5527.gif" alt="后续遍历过程演示"></p><ul><li>后序遍历的<strong>递归式</strong>：每一次重复的内容是 <code>左子树 -&gt; 右子树 -&gt; 根结点</code></li><li>后序遍历的<strong>递归边界</strong>：当我们发现遍历的目标树为空的时候，停止递归调用</li></ul><p>💡 与先序遍历的唯一发生改变的是递归式里调用递归函数的顺序，<strong>左子树和右子树的访问会优先于根结点</strong></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 后序遍历函数</span>
+<span class="token comment">// 入参是树的根结点对象</span>
+<span class="token keyword">function</span> <span class="token function">postOrder</span><span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 递归遍历左子树</span>
+        <span class="token function">postOrder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 递归遍历右子树</span>
+        <span class="token function">postOrder</span><span class="token punctuation">(</span>root<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 输出当前遍历的结点值</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&#39;当前遍历的结点值是：&#39;</span><span class="token punctuation">,</span> root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 递归边界，当结点为空时返回</span>
+        <span class="token keyword">return</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 运行结果</span>
+<span class="token function">postOrder</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 当前遍历的结点值是： D</span>
+<span class="token comment">// 当前遍历的结点值是： E</span>
+<span class="token comment">// 当前遍历的结点值是： B</span>
+<span class="token comment">// 当前遍历的结点值是： F</span>
+<span class="token comment">// 当前遍历的结点值是： C</span>
+<span class="token comment">// 当前遍历的结点值是： A</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="迭代遍历" tabindex="-1"><a class="header-anchor" href="#迭代遍历" aria-hidden="true">#</a> 迭代遍历</h2><h3 id="先序遍历-1" tabindex="-1"><a class="header-anchor" href="#先序遍历-1" aria-hidden="true">#</a> 先序遍历</h3><blockquote><p>题目描述：给定一个二叉树，返回它的前序（先序）遍历序列。</p><p>示例: 输入: [1,null,2,3]</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>1
+ \
+  2
+ /
+3
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>输出: [1,2,3]</p></blockquote><p>::: alert-info 一个思维工具：<strong>递归和栈</strong>有着脱不开的干系，当可以用递归做出来的题，而需要使用其他解法，此时我们本能地往<strong>栈</strong>上想。 :::</p><p>题目中的出参是一个数组（结点的值），它可以看作是是一个栈的出栈序列，因此只需要合理地安排结点入栈和出栈的时机，使结点出栈序列符合二叉树的前序遍历规则即可。</p><p><img src="/blog-code/assets/20200811110502673_30601.7d062c0a.gif" alt="先序遍历过程演示"></p><p>前序遍历的规则是 <strong>先遍历根结点、然后遍历左树、最后遍历右树</strong>，这正是我们所期望的出栈序列；而按道理入栈序列和出栈序列相反， 即按道理结点入栈应该按照 <code>右-&gt;左-&gt;根</code> 的顺序，⚠️ 但我们先接触到的<strong>起点就是根结点</strong>，因此第一步需要将根结点执行一次先入栈，然后马上出栈的操作，保证第一次出栈是根节点。</p><p>然后就在每一轮迭代中取出栈顶的元素（后 <code>push</code> 入栈的结点）作为当前的根结点，将值添加到结果数组，并将其右、左子树 <code>push</code> 到栈中，这样就可以构成所需的栈元素层叠关系，将根元素和左树先输出，后输出右树。</p><p>先序迭代遍历的出入栈顺序：</p><ol><li>将当前根结点入栈</li><li>取出栈顶结点，将结点值 <code>push</code> 进结果数组</li><li>若栈顶结点有右孩子，则将右孩子入栈（当下下轮的结点的根结点）</li><li>若栈顶结点有左孩子，则将左孩子入栈（当下一轮的结点的根结点）</li></ol><p>重复 2、3、4 步骤，通过 <code>push</code> 和 <code>pop</code>（前期会交替执行 <code>push</code> 和 <code>pop</code> 操作，后期只有一直执行 <code>pop</code> 操作） 操作直至栈空，遍历完整个二叉树。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ *
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>TreeNode<span class="token punctuation">}</span></span> <span class="token parameter">root</span>
+ * <span class="token keyword">@return</span> <span class="token class-name"><span class="token punctuation">{</span>number<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span>
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">preorderTraversal</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">root</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 初始化结果数组</span>
+  <span class="token keyword">let</span> res <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token comment">// 初始化栈结构</span>
+  <span class="token keyword">let</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token comment">// 迭代边界条件</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>root<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 首先将根节点入栈</span>
+  stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>root<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 进行迭代，当栈不为空就不断重复入栈、出栈操作</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>stack<span class="token punctuation">.</span>length<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 将栈顶结点出栈，作为当前的根节点</span>
+    <span class="token keyword">let</span> cur <span class="token operator">=</span> stack<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 将结点值 push 到结果数组的尾部</span>
+    res<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// 若当前子树有右孩子，先将其入栈</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>right<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>right<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 若当前子树有左孩子，后将其入栈</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>left<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>cur<span class="token punctuation">.</span>left<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 返回结果数组</span>
+  <span class="token keyword">return</span> res<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">更新时间: </span><span class="meta-item-info">2021/7/10 上午7:02:33</span></div><!----></footer><!----><!--[--><!--]--></main></div><div style="width:0px;" class="catalog-container absolute top-0 right-0 h-full hidden lg:block"><div class="headings-container sticky top-36" data-v-c28348e0><ul class="
+        max-w-max
+        m-2
+        pl-7
+        xl:pl-16
+        2xl:pl-20
+        py-4
+        opacity-50
+        hover:opacity-100
+        transition-all
+        duration-300
+      " data-v-c28348e0><!--[--><!--]--></ul></div></div><div style="display:none;" tabindex="0" class="
+          sidebar-container
+          fixed
+          inset-y-0
+          left-0
+          z-20
+          lg:hidden
+          opacity-10
+          hover:opacity-95
+        "><div class="headings-container
+      px-2
+      space-y-2
+      transition-all
+      duration-300 py-20" data-v-6eed9461><!--[--><!--]--></div></div></div><footer class="bg-gray-200 p-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-center" data-v-2981188c><div class="flex justify-center md:justify-start items-center" data-v-2981188c><a class="p-2 hover:bg-gray-300 rounded-md" href="https://benbinbin.github.io/" target="_blank" data-v-2981188c><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full" data-v-2981188c></a></div><div class="text-center space-y-0.5" data-v-2981188c><p class="text-sm text-gray-600" data-v-2981188c> ©2021 <span class="author" data-v-2981188c>Benbinbin</span>. All Right Reserved. </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 除特殊说明外，本站的文章遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" class="text-blue-400" data-v-2981188c>CC-BY-SA-4.0</a> 协议 </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 网站主题采用 <a href="https://github.com/Benbinbin/two-dishes-one-fish" target="_blank" class="text-blue-400" data-v-2981188c>Two Dishes One Fish</a></p></div><div class="
+        btn-container
+        flex
+        justify-center
+        md:justify-end
+        items-center
+        space-x-0.5
+      " data-v-2981188c><!--[--><a class="p-2 hover:bg-gray-300 rounded-md" href="mailto:benthomsonbin@gmail.com" target="" data-v-2981188c><img src="/blog-code/images/icons/email.svg" alt="email" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://github.com/Benbinbin" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/github.svg" alt="github" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://juejin.cn/user/3175045314389278/posts" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/juejin.svg" alt="juejin" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://dribbble.com/BinBinDesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/dribbble.svg" alt="dribbble" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://twitter.com/Benbinbin_fun" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/twitter.svg" alt="twitter" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://weibo.com/binbindesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/weibo.svg" alt="weibo" class="w-auto h-6" data-v-2981188c></a><!--]--></div></footer></div><!--]--></div>
+    <script type="module" src="/blog-code/assets/app.93fa4a4f.js" defer></script>
+  </body>
+</html>

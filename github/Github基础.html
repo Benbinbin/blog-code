@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/blog-code/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css"><title>Github基础 | Blog</title><meta name="description" content="A blog and knowledge management system about coding."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="modulepreload" href="/blog-code/assets/app.93fa4a4f.js"><link rel="modulepreload" href="/blog-code/assets/Github基础.html.a9af5ec9.js"><link rel="modulepreload" href="/blog-code/assets/Github基础.html.b67d2dc4.js">
+    <link rel="stylesheet" href="/blog-code/assets/style.cee61b43.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="min-h-screen flex flex-col"><nav class="px-4 sm:px-8 py-2 flex justify-between items-center sticky top-0 z-30 bg-white"><div class="left flex items-center space-x-0.5"><!--[--><button class="
+            catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden
+          " class="text-gray-400 hover:bg-gray-100 catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--><a class="avatar p-2 hover:bg-gray-100 rounded-md" href="/blog-code/#"><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full"></a></div><div class="right hidden sm:flex items-center space-x-0.5"><!--[--><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">All</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Git</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Github</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Docker</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Algorithm</button><!--]--><!--[--><button class="
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block
+          " class="text-gray-900 bg-gray-100 hover:bg-gray-200 p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--></div><div class="more-container sm:hidden relative"><button style="" class="p-2 select-none hover:bg-gray-100 rounded-md text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></button><button style="display:none;" class="p-2 select-none hover:bg-gray-100 rounded-md text-red-400 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></button><div style="display:none;" class="
+          more-modal
+          p-2
+          absolute
+          top-10
+          right-0
+          z-10
+          flex flex-col
+          space-y-2
+          bg-gray-100
+          rounded-md
+          opacity-90
+        "><!--[--><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">All</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Git</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Github</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Docker</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Algorithm</button><!--]--></div></div></nav><div class="relative flex-grow"><div class="theme-container no-navbar no-sidebar"><!----><div class="sidebar-mask"></div><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="github基础" tabindex="-1"><a class="header-anchor" href="#github基础" aria-hidden="true">#</a> Github基础</h1><p>参考：</p><ul><li>http://up-for-grabs.net/</li><li>http://www.firsttimersonly.com/</li><li><a href="https://github.com/search?utf8=%E2%9C%93&amp;q=label%3Afirst-timers-only+is%3Aopen&amp;type=Issues&amp;ref=searchresults" target="_blank" rel="noopener noreferrer">GitHub 上的（仅）初学者标签</a></li><li><a href="https://medium.com/@kentcdodds/first-timers-only-78281ea47455" target="_blank" rel="noopener noreferrer">「仅初学者」博文</a></li><li><a href="http://gitbook.liuhui998.com/index.html" target="_blank" rel="noopener noreferrer">Git Community Book 中译版</a></li><li><a href="https://github.com/git-tips/tips" target="_blank" rel="noopener noreferrer">git-tips</a>（<a href="https://github.com/521xueweihan/git-tips" target="_blank" rel="noopener noreferrer">中译版</a>）</li><li>查看开发者的<a href="http://firstpr.me/" target="_blank" rel="noopener noreferrer">第一个 Pull Request</a></li></ul><p>托管 Git 项目的方式有多种，目前最受欢迎的托管网站是 <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a></p><h2 id="访问远程仓库" tabindex="-1"><a class="header-anchor" href="#访问远程仓库" aria-hidden="true">#</a> 访问远程仓库</h2><p>通过位于 Web 上的<strong>仓库的 URL</strong> 和 Git 远程命令 <code>git remote</code> 访问远程仓库并进行交互。</p><p><strong>远程仓库的简写名 Shortname</strong> 将远程仓库克隆到本地后，该仓库会（通过 URL）与远程仓库绑定，运行命令 <code>git remote</code> 会返回远程仓库的简写名（通常命名为 <code>origin</code>）。简写名是<strong>远程仓库路径</strong>的简略表示。简写名仅局部用于当前仓库（如在你的本地仓库中）。</p><p>示例 <img src="/blog-code/assets/20191126224140485_9392.a4d99b69.png" alt="远程仓库简写名与路径"></p><ul><li>命令 <code>git remote</code> 设置选项 <code>-v</code> 返回远程仓库的简写名及其所指的完整路径（即 URL）</li><li>使用命令 <code>git remote rename &lt;origin_name&gt; &lt;new_name&gt;</code> 重命名远程仓库简写名</li></ul><h2 id="创建远程仓库" tabindex="-1"><a class="header-anchor" href="#创建远程仓库" aria-hidden="true">#</a> 创建远程仓库</h2><p>从主页创建仓库可下拉导航栏标签创建或点击页面的 <code>New</code> 按钮</p><p><img src="/blog-code/assets/20191126224204894_23714.e8feb804.png" alt="创建仓库-1"></p><p>在创建仓库设置仓库名称 Repository name 等相关信息。一般使用项目名称作为仓库的名称。</p><p><img src="/blog-code/assets/20191126224417421_27727.aa516b89.png" alt="创建仓库-2"></p><p>⚠️ 当本地等待 <code>push</code> 的仓库已经有了 README 文件时，创建仓库时应取消勾选 <code>Initialize this repository with the README</code>（使用 README 初始化此仓库）选项</p><p>当新建仓库未初始化，显示出仓库的设置页面 <code>Quick setup</code>，根据本地仓库情况和提示进行操作</p><p><img src="/blog-code/assets/20191126224444372_3992.82cc554b.png" alt="创建仓库-3"></p><ul><li>命令 <code>git remote add origin &lt;URL&gt;</code> 创建了一个简写名 <code>origin</code> （也可以设置为其他名称），并指向远程仓库完整路径（一般是 Web 上的远程仓库 URL）。添加远程仓库的路径，以在本地仓库与远程仓库之间建立连接。</li><li>使用命令 <code>git remote -v</code> 查看远程仓库与本地仓库之间连接信息</li></ul><h2 id="推送更改至远程仓库" tabindex="-1"><a class="header-anchor" href="#推送更改至远程仓库" aria-hidden="true">#</a> 推送更改至远程仓库</h2><p>命令 <code>git push &lt;remote-shortname&gt; &lt;branch&gt;</code> 将本地 commit 推送到远程仓库，要提供<strong>远程仓库简写名</strong>以及用于容纳该 commit 的远程仓库的<strong>分支名</strong>。</p><p>将当前本地仓库推送到简写名为 <code>origin</code> 的远程仓库的 <code>master</code> 分支</p><p><img src="/blog-code/assets/20191126224503586_27347.8d3e6045.png" alt="推送到远程仓库"></p><ul><li>将本地 commit 推送到远程仓库可能需要输入用户名和密码，这取决于你如何配置 GitHub 的以及使用的远程 URL 。 <ul><li>如果配置 GitHub 使用 HTTP 协议，就需要提供用户名和密码。如果你的密码出错，不用担心，它会让你重新输入</li><li>如果配置 GitHub 使用 SSH 协议，并提供过 SSH 密匙，则不需要提供密码。参阅 GitHub 文档 <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="noopener noreferrer">使用 SSH 连接</a>。</li></ul></li><li>Git 会压缩文件使之变小，然后将其推送至远程仓库</li><li>示例输出表示创建了一个新分支 <code>[new branch]</code>，后面是表示本地分支推送到远程仓库的分支 <code>master -&gt; master</code></li></ul><p>⚠️ 远程仓库的 URL 包含项目所在帐户的用户名，而该用户名为仓库的所有者，提交 <code>push</code> 到该仓库需要提供该用户名和相应密码才有权限对远程仓库进行修改</p><p><img src="/blog-code/assets/20191126224528394_5005.50e8054c.png" alt="推送到远程仓库-2"></p><p><img src="/blog-code/assets/20191126224544533_3339.87ece41b.png" alt="跟踪分支"></p><p>当把本地 commit 推送到远程仓库后，会出现跟踪分支（其名称由远程仓库的简写名及分支名称组成），以跟踪（同步）远程仓库中的相应分支。示例中的跟踪分支表示当前远程仓库 <code>origin</code> 有一个 <code>master</code> 分支指向 commit <code>d2227cc</code>（<strong>并包含 <code>d2227cc</code> 前的所有 commit <strong>），这意味着可以在本地仓库跟踪远程仓库的信息。但需要注意的一点是，这个跟踪分支并</strong>不能实时表现</strong>在远程仓库上的位置。如果我们之外的其他人对远程仓库做了更改，我们本地仓库中的跟踪分支不会移动，必须告诉它检查更新/同步<strong>它才会</strong>移动。</p><h2 id="查看远程仓库" tabindex="-1"><a class="header-anchor" href="#查看远程仓库" aria-hidden="true">#</a> 查看远程仓库</h2><p>推送 commit 至远程仓库后，Github 会在项目主页显示关于仓库的信息可供查阅。GitHub 有一个很棒的功能，即它会<strong>自动显示 README 文件的内容</strong>。</p><p><img src="/blog-code/assets/20191126224601721_7357.bd033175.png" alt="Github 项目主页"></p><p>该示例中的 GitHub 显示当前仓库中有一个个 commit、一个分支、一名贡献者</p><h2 id="从远处仓库拉取修改" tabindex="-1"><a class="header-anchor" href="#从远处仓库拉取修改" aria-hidden="true">#</a> 从远处仓库拉取修改</h2><p>当远程仓库上存在一些 commit ，但我们的本地仓库上没有这些 commit ，为了将与远程仓库上的更改同步，需要使用命令 <code>git pull &lt;remote-shortname&gt; &lt;branch&gt;</code> 同步<strong>远程</strong>仓库与<strong>本地</strong>仓库，与命令 <code>git push</code> 类似，但是方向相反，拉取远程仓库的 commit 到本地并与本地分支合并。</p><p>检索 origin 远程仓库 master 分支中的 commit 并将。</p><p><img src="/blog-code/assets/20191126224628521_13204.5aacee96.png" alt="从远程仓库拉取修改"></p><ul><li>远程分支上的 commit 会被复制到本地仓库</li><li>本地跟踪分支 <code>origin/master</code> 移到指向最新的 commit</li><li>本地跟踪分支 <code>origin/master</code> 合并到本地分支 master</li><li>输出 <code>fast-forward</code> 表示 Git 进行了<strong>快进合并</strong>，并输出类似于 <code>git --stat</code> 的信息，显示更改的文件及添加或删除了多少行</li></ul><p>命令 <code>git fetch &lt;remote-shortname&gt; &lt;branch&gt;</code> 也可以从远程仓库分支检索 commit 并下载到本地，但<strong>不会</strong>自动将本地分支与远程跟踪分支<strong>合并</strong>。只是将跟踪分支指向最新的 commit，而当前分支并不移动。使用 <code>git fetch</code> 而不是 <code>git pull</code> 的一个主要情形是当你的远程分支和本地分支都拥有对方所没有的更改时，直接合并会出现合并冲突。可以将 <code>git fetch</code> 想象成 <code>git pull</code> 它的一半操作，先获取远程更改，将它们存储到本地分支中，然后再使用命令 <code>git merge &lt;branch&gt;</code>手动执行合并。</p><p>🎦 <a href="https://www.jianguoyun.com/p/DajSvLgQjNDGBxjS-uAD" target="_blank" rel="noopener noreferrer">git fetch 演示视频</a></p><h2 id="fork-仓库" tabindex="-1"><a class="header-anchor" href="#fork-仓库" aria-hidden="true">#</a> fork 仓库</h2><p>在版本控制术语中，fork 一个仓库是指复制它。当你 fork 仓库时会创建与原始仓库完全相同的副本，新副本也是一个远程仓库，并将该副本移动到你的帐户，你对 fork 的仓库拥有完全控制权（与之相对应的是克隆，克隆仓库发生在本地计算机上，将远程仓库复制到本地，获得完全一样的仓库副本）。</p><p>fork 项目后你的 GitHub 配置文件名称旁边会显示新的项目名称。此外，名称下面还会说明原始项目所在的位置。可以 fork GitHub 上的任何公共仓库，并对获得的副本拥有完全控制权。</p><p><img src="/blog-code/assets/20191126232329897_21199.48a46e0c.png" alt="fork 仓库"></p><ul><li>fork 并非 Git 子命令</li><li>修改 fork 的仓库不会更改原始仓库</li></ul><h2 id="查看其他开发者的-commit" tabindex="-1"><a class="header-anchor" href="#查看其他开发者的-commit" aria-hidden="true">#</a> 查看其他开发者的 commit</h2><p>在与他人开发者协作时，使用命令 <code>git shortlog</code> 按作者对 commit 分组排序列出所有提交。还可以设置选项 <code>-s</code> 仅显示 commit 的数量，设置选项 <code>-n</code> 按数量排序（而不是按作者姓名的字母顺序）。</p><p><img src="/blog-code/assets/20191127104911079_15340.1e3eedf0.png" alt="git shortlog 按开发者分组列出提交"></p><p><img src="/blog-code/assets/20191127105946592_26130.83c89f68.png" alt="git shortlog 按提交数量排序"></p><p>命令 <code>git log</code> 设置不同的选项可按不同需求查询 commit</p><ul><li>设置选项 <code>--author=name</code> 筛选作者名称与 <code>name</code> 相匹配所有的 commit</li><li>设置选项 <code>--grep key_word</code> 或 <code>--grep=key_word</code> 筛选提交信息与关键字 <code>key_word</code> 相匹配的所有 commit（💡Grep 是一个模式匹配工具💡，如运行 <code>git log --grep &quot;fort&quot;</code> 则 Git 将显示顺序包含字符 <code>f</code>、<code>o</code>、<code>r</code>、<code>t</code> 的 commit，可能是一个单词，也可能是单词里的一个片段相匹配即可 ）</li></ul><p>⚠️ 空格是查询时的一个问题，如果尝试搜索包含多个词且单词之间有空格的作者或内容，则需要将空格也包含在引号内。例如，要搜索 <code>unit tests</code>，你需要使用以下命令 <code>git log --grep=&quot;unit tests&quot;</code></p><h2 id="拉取请求pull-request" tabindex="-1"><a class="header-anchor" href="#拉取请求pull-request" aria-hidden="true">#</a> 拉取请求Pull Request</h2><p>拉取请求 Pull Request 是向初始或源仓库的维护者发出的请求，以让其将你在他们项目的 fork 上所做的更改应用在他们的项目中。你请求他们拉取你做的更改。</p><p>要创建 Pull Request，你需要完成一些操作：</p><ul><li>你必须 fork 源仓库</li><li>将你的 fork 克隆到你的计算机</li><li>进行一些 commit（最好是在特性分支上！）</li><li>将 commit 推送回你的 fork</li><li>创建一个新的 Pull Request，并选择包含你的新 commit 的分支。</li></ul><p>🎦 <a href="https://www.jianguoyun.com/p/DSSbTUkQjNDGBxjP-uAD" target="_blank" rel="noopener noreferrer">创建 Pull Request</a></p><ul><li>当创建一个 Pull Request 时，要将所有更改放在一个专用于这些更改的特性分支上</li><li>查看 GitHub 中的 Conversation 对话选项卡，可以与项目维护者进行沟通，以明确他们希望你做什么</li><li>如果需要更改 Pull Request 一般按照以下步骤 <ul><li>在你的 Pull Request 所基于的本地仓库的同一分支上添加一些必要 commit</li><li>将该分支推送到你的源仓库 fork 副本</li></ul></li></ul><h2 id="与源项目保持同步" tabindex="-1"><a class="header-anchor" href="#与源项目保持同步" aria-hidden="true">#</a> 与源项目保持同步</h2><h3 id="star" tabindex="-1"><a class="header-anchor" href="#star" aria-hidden="true">#</a> Star</h3><p>在仓库主页点击 Star 按钮可收藏该项目，Star 是能帮助你跟踪感兴趣仓库的一个有用功能，同时也成为了衡量仓库受欢迎程度的手段。但是如果想实时跟进仓库的发展就不行了，你得手动前往收藏页面查看仓库，以检查它们是否发生变化。</p><h3 id="watch" tabindex="-1"><a class="header-anchor" href="#watch" aria-hidden="true">#</a> Watch</h3><p>如果你要跟进一个项目的变化，并希望接收变更通知，GitHub 为你提供了 Watch 按钮以关注该仓库。这样当该仓库发生任何活动时，GitHub 都会通知你，例如当有人向仓库推送变更，创建了新的 Issues，或者在现有 Issues 中添加了评论。</p><p><img src="/blog-code/assets/20191127123954887_18541.7ca43b0c.png" alt="Watching 仓库"></p><h2 id="加入源仓库更改" tabindex="-1"><a class="header-anchor" href="#加入源仓库更改" aria-hidden="true">#</a> 加入源仓库更改</h2><p>假使源仓库开始对项目进行更改了（而 fork 中不会获得这些更改），为了本地克隆仓库保持同步，需要将源仓库的项目添加为额外远程仓库以便保持同步。使用命令 <code>git remote add</code> 命令向本地仓库添加一个新的简写名（一般使用 <code>upstream</code> 表示引用源仓库）和 URL，将与源仓库之间建立连接。</p><p><img src="/blog-code/assets/20191127153247953_17635.eb1378a9.png" alt="添加引用源仓库链接"></p><p>接着使用命令 <code>git pull &lt;remote-shortname&gt; &lt;branch&gt;</code> 或 <strong><code>git fetch &lt;remote-shortname&gt; &lt;branch&gt;</code>（推荐使用）</strong> 获得上游远程仓库的更改，注意简写名应使用引用源仓库的简写名</p><p><img src="/blog-code/assets/20191127153345048_3410.d98d74dd.png" alt="拉取上游变更-1"> 从上游远程仓库获取了所有更改，并存放于本地仓库的新分支 <code>upstream/master</code>之中</p><p><img src="/blog-code/assets/20191127153405969_25196.dde2a54b.png" alt="拉取上游变更-2"></p><p>本地仓库中多出了 <code>upstream/master</code> 跟踪分支，该分支跟踪<strong>源仓库</strong> master 分支的位置，即获取对源仓库的master 分支所做的更改</p><p>一般需要将源仓库的更新合并到本地分支默认分支，以便在默认分支上的开发环境是与源仓库同步的，使用命令 <code>git merge &lt;branch_name&gt;</code>。同样为了保持 fork 仓库也进行同步，最后把本地整合了最新更新的分支 push 到远程仓库</p><p><img src="/blog-code/assets/20191127154519620_1244.c2e2595e.png" alt="拉取上游更新-3"></p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">更新时间: </span><span class="meta-item-info">2021/7/8 上午8:51:43</span></div><!----></footer><!----><!--[--><!--]--></main></div><div style="width:0px;" class="catalog-container absolute top-0 right-0 h-full hidden lg:block"><div class="headings-container sticky top-36" data-v-c28348e0><ul class="
+        max-w-max
+        m-2
+        pl-7
+        xl:pl-16
+        2xl:pl-20
+        py-4
+        opacity-50
+        hover:opacity-100
+        transition-all
+        duration-300
+      " data-v-c28348e0><!--[--><!--]--></ul></div></div><div style="display:none;" tabindex="0" class="
+          sidebar-container
+          fixed
+          inset-y-0
+          left-0
+          z-20
+          lg:hidden
+          opacity-10
+          hover:opacity-95
+        "><div class="headings-container
+      px-2
+      space-y-2
+      transition-all
+      duration-300 py-20" data-v-6eed9461><!--[--><!--]--></div></div></div><footer class="bg-gray-200 p-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-center" data-v-2981188c><div class="flex justify-center md:justify-start items-center" data-v-2981188c><a class="p-2 hover:bg-gray-300 rounded-md" href="https://benbinbin.github.io/" target="_blank" data-v-2981188c><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full" data-v-2981188c></a></div><div class="text-center space-y-0.5" data-v-2981188c><p class="text-sm text-gray-600" data-v-2981188c> ©2021 <span class="author" data-v-2981188c>Benbinbin</span>. All Right Reserved. </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 除特殊说明外，本站的文章遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" class="text-blue-400" data-v-2981188c>CC-BY-SA-4.0</a> 协议 </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 网站主题采用 <a href="https://github.com/Benbinbin/two-dishes-one-fish" target="_blank" class="text-blue-400" data-v-2981188c>Two Dishes One Fish</a></p></div><div class="
+        btn-container
+        flex
+        justify-center
+        md:justify-end
+        items-center
+        space-x-0.5
+      " data-v-2981188c><!--[--><a class="p-2 hover:bg-gray-300 rounded-md" href="mailto:benthomsonbin@gmail.com" target="" data-v-2981188c><img src="/blog-code/images/icons/email.svg" alt="email" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://github.com/Benbinbin" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/github.svg" alt="github" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://juejin.cn/user/3175045314389278/posts" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/juejin.svg" alt="juejin" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://dribbble.com/BinBinDesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/dribbble.svg" alt="dribbble" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://twitter.com/Benbinbin_fun" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/twitter.svg" alt="twitter" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://weibo.com/binbindesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/weibo.svg" alt="weibo" class="w-auto h-6" data-v-2981188c></a><!--]--></div></footer></div><!--]--></div>
+    <script type="module" src="/blog-code/assets/app.93fa4a4f.js" defer></script>
+  </body>
+</html>

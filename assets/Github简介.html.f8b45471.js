@@ -1,0 +1,1 @@
+const e={key:"v-25266190",path:"/github/Github%E7%AE%80%E4%BB%8B.html",title:"Github 简介",lang:"zh-CN",frontmatter:{createdTime:1625552441e3,updatedTime:1625900553e3},excerpt:"",headers:[],filePathRelative:"github/Github简介.md",git:{updatedTime:1625552441e3}};export{e as data};

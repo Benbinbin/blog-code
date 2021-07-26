@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/blog-code/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css"><title>链表应用 | Blog</title><meta name="description" content="A blog and knowledge management system about coding."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="modulepreload" href="/blog-code/assets/app.93fa4a4f.js"><link rel="modulepreload" href="/blog-code/assets/链表应用.html.e3a8db5a.js"><link rel="modulepreload" href="/blog-code/assets/链表应用.html.566444d8.js">
+    <link rel="stylesheet" href="/blog-code/assets/style.cee61b43.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="min-h-screen flex flex-col"><nav class="px-4 sm:px-8 py-2 flex justify-between items-center sticky top-0 z-30 bg-white"><div class="left flex items-center space-x-0.5"><!--[--><button class="
+            catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden
+          " class="text-gray-400 hover:bg-gray-100 catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--><a class="avatar p-2 hover:bg-gray-100 rounded-md" href="/blog-code/#"><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full"></a></div><div class="right hidden sm:flex items-center space-x-0.5"><!--[--><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">All</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Git</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Github</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Docker</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Algorithm</button><!--]--><!--[--><button class="
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block
+          " class="text-gray-900 bg-gray-100 hover:bg-gray-200 p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--></div><div class="more-container sm:hidden relative"><button style="" class="p-2 select-none hover:bg-gray-100 rounded-md text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></button><button style="display:none;" class="p-2 select-none hover:bg-gray-100 rounded-md text-red-400 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></button><div style="display:none;" class="
+          more-modal
+          p-2
+          absolute
+          top-10
+          right-0
+          z-10
+          flex flex-col
+          space-y-2
+          bg-gray-100
+          rounded-md
+          opacity-90
+        "><!--[--><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">All</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Git</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Github</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Docker</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Algorithm</button><!--]--></div></div></nav><div class="relative flex-grow"><div class="theme-container no-navbar no-sidebar"><!----><div class="sidebar-mask"></div><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="链表应用" tabindex="-1"><a class="header-anchor" href="#链表应用" aria-hidden="true">#</a> 链表应用</h1><p>做链表处理类问题要把握住一个中心思想：<strong>处理链表结点之间的指针关系</strong>。</p><p>结合实际面试中的命题规律，题目分为以下三类：</p><ul><li>⭐ 链表的处理：合并、删除等</li><li>链表的反转及其衍生题目</li><li>链表成环问题及其衍生题目</li></ul><h2 id="链表的合并" tabindex="-1"><a class="header-anchor" href="#链表的合并" aria-hidden="true">#</a> 链表的合并</h2><blockquote><p>真题描述：将两个有序链表合并为一个新的有序链表并返回。新链表是通过<strong>拼接给定的两个链表的所有结点</strong>组成的。</p><p>示例：输入：<code>1-&gt;2-&gt;4</code>，<code>1-&gt;3-&gt;4</code> 输出：<code>1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</code></p></blockquote><p>两个链表如果想要合并为一个链表，我们恰当地补齐双方之间结点 <code>next</code> 指针的指向关系，就能达到目的。新建一个链表 <code>head</code>（第一个结点，作为进入点），然后赋值给 <code>cur</code> 作为为指针，基于结点值 <code>val</code> 的大小对两个链表进行<strong>穿针引线</strong>。</p><p>还要考虑两个链表长度不等的情况，若其中一个链表已经完全被串进新链表里了，而另一个链表还有剩余结点，考虑到该链表本身就是有序的，我们可以直接把它整个拼到目标链表的尾部。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span> <span class="token parameter">l1</span>
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span> <span class="token parameter">l2</span>
+ * <span class="token keyword">@return</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span>
+ */</span>
+
+<span class="token keyword">let</span> l1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  next<span class="token operator">:</span> <span class="token punctuation">{</span>
+    val<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    next<span class="token operator">:</span> <span class="token punctuation">{</span>
+      val<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      next<span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> l2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  next<span class="token operator">:</span> <span class="token punctuation">{</span>
+    val<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+    next<span class="token operator">:</span> <span class="token punctuation">{</span>
+      val<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+      next<span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> resultList <span class="token operator">=</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> l2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span><span class="token punctuation">(</span>resultList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>resultList<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// 1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4</span>
+  resultList <span class="token operator">=</span> resultList<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">mergeTwoLists</span><span class="token punctuation">(</span><span class="token parameter">l1<span class="token punctuation">,</span> l2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 创建新链表，定义头结点确保链表可以被访问到</span>
+  <span class="token keyword">let</span> head <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// cur 表示当前指针所在的位置</span>
+  <span class="token comment">// 初始化 cur 指针</span>
+  <span class="token keyword">let</span> cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>l1 <span class="token operator">&amp;&amp;</span> l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 如果 l1 的结点值较小，先用指针先串起 l1 的结点</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>l1<span class="token punctuation">.</span>val <span class="token operator">&lt;=</span> l2<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      cur<span class="token punctuation">.</span>next <span class="token operator">=</span> l1<span class="token punctuation">;</span>
+      <span class="token comment">// l1 向前一步</span>
+      l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 如果 l2 的结点值较小，先用指针先串起 l2 的结点</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      cur<span class="token punctuation">.</span>next <span class="token operator">=</span> l2<span class="token punctuation">;</span>
+      <span class="token comment">// l2 向前一步</span>
+      l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 指针「串起」一个结点后，也向前一步</span>
+    cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 处理链表不等长的情况</span>
+  cur<span class="token punctuation">.</span>next <span class="token operator">=</span> l1 <span class="token operator">===</span> <span class="token keyword">null</span> <span class="token operator">?</span> l2 <span class="token operator">:</span> l1<span class="token punctuation">;</span>
+  <span class="token comment">// 返回起始点</span>
+  <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>node <span class="token operator">=</span> val<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br></div></div><h2 id="链表结点的删除" tabindex="-1"><a class="header-anchor" href="#链表结点的删除" aria-hidden="true">#</a> 链表结点的删除</h2><blockquote><p>真题描述：给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。</p><p>示例 1：输入：<code>1-&gt;1-&gt;2</code> 输出：<code>1-&gt;2</code> 示例 2：输入：<code>1-&gt;1-&gt;2-&gt;3-&gt;3</code> 输出：<code>1-&gt;2-&gt;3</code></p></blockquote><p>链表的删除是一个基础且关键的操作，只需要删除将目标结点的前驱结点 <code>next</code> 指针往后指一格即可。由于此处是已排序的链表，直接在遍历中依次判断前后两个元素值是否相等即可。</p><p><img src="/blog-code/assets/20200819093220799_2902.5b863aa3.png" alt="删除结点"></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span> <span class="token parameter">head</span>
+ * <span class="token keyword">@return</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span>
+ */</span>
+
+<span class="token keyword">let</span> l1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  next<span class="token operator">:</span> <span class="token punctuation">{</span>
+    val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    next<span class="token operator">:</span> <span class="token punctuation">{</span>
+      val<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      next<span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">let</span> l2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  next<span class="token operator">:</span> <span class="token punctuation">{</span>
+    val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    next<span class="token operator">:</span> <span class="token punctuation">{</span>
+      val<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      next<span class="token operator">:</span> <span class="token punctuation">{</span>
+        val<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+        next<span class="token operator">:</span> <span class="token punctuation">{</span>
+          val<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          next<span class="token operator">:</span> <span class="token keyword">null</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+l1 <span class="token operator">=</span> <span class="token function">deleteDuplicates</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+l2 <span class="token operator">=</span> <span class="token function">deleteDuplicates</span><span class="token punctuation">(</span>l2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>l1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>l1<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>l2<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">deleteDuplicates</span><span class="token punctuation">(</span><span class="token parameter">list</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 指针</span>
+  <span class="token comment">// 初始化指针为链表第一个结点</span>
+  <span class="token keyword">let</span> cur <span class="token operator">=</span> list<span class="token punctuation">;</span>
+
+  <span class="token comment">// 指针遍历结点</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>cur <span class="token operator">&amp;&amp;</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 若当前结点和它后面一个结点值相等（重复）</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>val <span class="token operator">===</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 删除靠后的那个结点（去重）</span>
+      cur<span class="token punctuation">.</span>next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 若不重复，继续遍历</span>
+      cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 返回去重后的链表（第一个结点，链表进入点0</span>
+  <span class="token keyword">return</span> list
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br></div></div><h2 id="dummy-结点" tabindex="-1"><a class="header-anchor" href="#dummy-结点" aria-hidden="true">#</a> dummy 结点</h2><blockquote><p>真题描述：给定一个排序链表，<strong>删除所有含有重复数字的结点</strong>，只保留原始链表中 没有重复出现的数字。</p><p>示例 1：输入：<code>1-&gt;2-&gt;3-&gt;3-&gt;4-&gt;4-&gt;5</code> 输出：<code>1-&gt;2-&gt;5</code> 示例 2：输入：<code>1-&gt;1-&gt;1-&gt;2-&gt;3</code> 输出：<code>2-&gt;3</code></p></blockquote><p>该问题是删除问题的延伸，一般将前驱结点的 <code>next</code> 指针往后挪一位「跳跃」跨过一个结点即可实现结点的删除，但是如果要将出现的重复的结点都删除，至少要删除两个结点才行，而且必须保证前驱结点有结点指向才可以，经常会遇到这样的问题：<strong>链表的第一个结点，因为没有前驱结点</strong>，导致我们面对它无从下手。这时我们就可以用一个 <code>dummy</code> 结点来解决这个问题。</p><p><strong><code>dummy</code> 结点</strong>：就是人为制造出来的链表的第一个结点的前驱结点，这样链表中所有的结点都能确保有一个前驱结点，也就所有结点都能够用同样的逻辑来处理了。</p><p><img src="/blog-code/assets/20200819105821041_6885.1d27b63a.png" alt="创建 dummy 结点"></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">let</span> l1 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  next<span class="token operator">:</span> <span class="token punctuation">{</span>
+    val<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    next<span class="token operator">:</span> <span class="token punctuation">{</span>
+      val<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      next<span class="token operator">:</span> <span class="token punctuation">{</span>
+        val<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+        next<span class="token operator">:</span> <span class="token punctuation">{</span>
+          val<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+          next<span class="token operator">:</span> <span class="token punctuation">{</span>
+            val<span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+            next<span class="token operator">:</span> <span class="token punctuation">{</span>
+              val<span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+              next<span class="token operator">:</span> <span class="token keyword">null</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">let</span> l2 <span class="token operator">=</span> <span class="token punctuation">{</span>
+  val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  next<span class="token operator">:</span> <span class="token punctuation">{</span>
+    val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    next<span class="token operator">:</span> <span class="token punctuation">{</span>
+      val<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      next<span class="token operator">:</span> <span class="token punctuation">{</span>
+        val<span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        next<span class="token operator">:</span> <span class="token punctuation">{</span>
+          val<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+          next<span class="token operator">:</span> <span class="token keyword">null</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+
+l1 <span class="token operator">=</span> <span class="token function">deleteDuplicates</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+l2 <span class="token operator">=</span> <span class="token function">deleteDuplicates</span><span class="token punctuation">(</span>l2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>l1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>l1<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  l1 <span class="token operator">=</span> l1<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;------&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">while</span> <span class="token punctuation">(</span>l2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>l2<span class="token punctuation">.</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  l2 <span class="token operator">=</span> l2<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">deleteDuplicates</span><span class="token punctuation">(</span><span class="token parameter">head</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 极端情况：0个或1个结点，则不会重复，直接返回</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>head <span class="token operator">||</span> <span class="token operator">!</span>head<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> head
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 创建 dummy 结点</span>
+  <span class="token keyword">let</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 将 dummy 连接到原始链表的首个节点上</span>
+  dummy<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+
+  <span class="token comment">// 创建指针</span>
+  <span class="token comment">// 初始化指向为首个结点</span>
+  <span class="token keyword">let</span> cur <span class="token operator">=</span> dummy<span class="token punctuation">;</span>
+
+  <span class="token comment">// 遍历结点,从虚拟结点 dummy 开始，其值 dummy.val 为 undefined</span>
+  <span class="token comment">// 当前结点后还有两个结点时</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>next <span class="token operator">&amp;&amp;</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 判断后面两个结点的值是否相同</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>val <span class="token operator">===</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">.</span>val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果两个结点的值相同，记下该重复值</span>
+      <span class="token keyword">let</span> value <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>val<span class="token punctuation">;</span>
+      <span class="token comment">// 反复地排查后面的元素是否存在多次重复该值的情况</span>
+      <span class="token keyword">while</span> <span class="token punctuation">(</span>cur<span class="token punctuation">.</span>next <span class="token operator">&amp;&amp;</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>val <span class="token operator">===</span> value<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 若有，则删除</span>
+        cur<span class="token punctuation">.</span>next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 若不重复，遍历下一个结点</span>
+      cur <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 返回处理后的链表的首个结点（非 dummy 结点）</span>
+  <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br></div></div><p>💡 <code>dummy</code> 结点可以帮我们处理<strong>头结点为空的边界问题</strong>，帮助我们简化解题过程。因此涉及链表操作、尤其是涉及结点删除的题目（对前驱结点的存在性要求比较高），建议直接把 <code>dummy</code> 给用起来，建立好的编程习惯：</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">const</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// 这里的 head 是链表原有的第一个结点</span>
+dummy<span class="token punctuation">.</span>next <span class="token operator">=</span> head
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="快慢指针" tabindex="-1"><a class="header-anchor" href="#快慢指针" aria-hidden="true">#</a> 快慢指针</h2><blockquote><p>真题描述：给定一个链表，删除链表的倒数第 <code>n</code> 个结点，并且返回链表的头结点。</p><p>示例： 给定一个链表: <code>1-&gt;2-&gt;3-&gt;4-&gt;5</code>，和 <code>n = 2</code>。当删除了倒数第二个结点后，链表变为 <code>1-&gt;2-&gt;3-&gt;5</code>，💡 给定的 <code>n</code> 保证是有效的。</p></blockquote><p>由于链表不能像数组一样通过属性 <code>length</code> 和索引来直接定位到结点，只能通过遍历来访问结点和了解结点数量。而遍历不可能从后往前走，因此倒数第 N 个结点可以转换为（正数）第 <code>M = len - n + 1</code> 个结点，这里 <code>len</code> 代表链表的总长度。</p><p>可以直接遍历两趟：第一趟设置一个变量 <code>count = 0</code>，每遍历到一个不为空的结点 <code>count + 1</code> ，一直遍历到链表结束为止，得出链表的总长度 <code>len</code>；根据这个总长度，通过公式 <code>M = len - n + 1</code> 算出倒数第 <code>n</code> 个结点到底对应正数第几个结点。然后第二趟遍历到第 <code>M - 1</code>（也就是 <code>len - n</code>，因为遍历计数变量一般从 <code>0</code> 开始） 个结点的时候就可以停下来，执行删除操作，将前驱结点指向后驱结点，这样就可以删除中间结点。</p><p>但是两次遍历时间复杂度较大，可以使用双指针的快慢指针来优化。原来的解法需要使用两次遍历实现<strong>求长度，做减法</strong> 和 <strong>找定位</strong>，而使用快慢指针就可以<strong>将做减法和找定位这个过程给融合</strong>。</p><p>快慢指针指的是两个一前一后的指针，由于它们「起步」位置不同造成的，但是「步速」一样，两个指针可以在一次遍历中往同一个方向走，前一个快指针控制遍历的终点（停止时机），后一个慢指针用来执行删除操作。通过快指针先行一步、接着快慢指针一起前进这个操作，巧妙地把两个指针之间的差值保持在了 <code>n</code> 上，💡 用空间换时间，本质上其实就是对关键信息进行提前记忆，相当于用两个指针对差值实现了记忆。</p><p><img src="/blog-code/assets/20200824095130570_4577.aef794bd.png" alt="初始化快慢指针为链表的 dummy 结点"></p><p>根据需要删除的位置为倒数第 <code>n</code> 个结点来设定快慢指针的间距</p><p><img src="/blog-code/assets/20200824095237178_30822.1999da19.png" alt="快慢指针的间距"></p><p>当快指针走到链表末尾（第 <code>len</code> 个）时，慢指针刚好就在 <code>len - n</code> 这个位置上。</p><p><img src="/blog-code/assets/20200824095341610_13303.6a1c5770.png" alt="快慢指针在遍历中一起前进直至快指针到达最后一个结点"></p><p><img src="/blog-code/assets/20200824095427082_32020.d03c72ab.png" alt="慢指针就刚好定位到所需删除的结点的前驱结点上"></p><p><img src="/blog-code/assets/20200824095453014_4802.4b3ac97b.png" alt="修改结点 next 指向删除目标结点"></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token keyword">function</span> <span class="token function">removeNthFromEnd</span><span class="token punctuation">(</span><span class="token parameter">head<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 创建 dummy 结点</span>
+  <span class="token keyword">const</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 指向原始链表的开始结点</span>
+  dummy<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+
+  <span class="token comment">// 初始化快慢指针，均指向 dummy 结点</span>
+  <span class="token keyword">let</span> fast <span class="token operator">=</span> dummy<span class="token punctuation">;</span>
+  <span class="token keyword">let</span> slow <span class="token operator">=</span> dummy<span class="token punctuation">;</span>
+  <span class="token comment">// 基于删除结点的位置设置快慢指针的间距</span>
+  <span class="token comment">// 快指针先走 n 步</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>n <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fast <span class="token operator">=</span> fast<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    n<span class="token operator">--</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 遍历链表</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>fast<span class="token punctuation">.</span>next<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    fast <span class="token operator">=</span> fast<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    slow <span class="token operator">=</span> slow<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 快指针到达了最后结点，删除慢指针此时指代结点的后继结点</span>
+  slow<span class="token punctuation">.</span>next <span class="token operator">=</span> slow<span class="token punctuation">.</span>next<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+
+  <span class="token comment">// 返回处理后链表的头节点</span>
+  <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br></div></div><h2 id="链表翻转" tabindex="-1"><a class="header-anchor" href="#链表翻转" aria-hidden="true">#</a> 链表翻转</h2><blockquote><p>真题描述：定义一个函数，输入一个链表的头结点，反转该链表并输出反转后链表的头结点。</p><p>示例：输入: <code>1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</code> 输出：<code>5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</code></p></blockquote><p>处理链表的本质，是处理链表结点之间的<strong>指针关系</strong>，只要想办法把每个结点 <code>next</code> 指针的指向给反过来就行。</p><p><img src="/blog-code/assets/20200826073407455_6206.83bb291a.png" alt="翻转指针"></p><p>这里我们需要用到三个指针，它们分别指向目标结点 <code>cur</code>、目标结点的前驱结点 <code>pre</code>、目标结点的后继结点 <code>next</code>。这里我只需要一个简单的 <code>cur.next = pre</code>，就做到了目标结点的 <code>next</code> 指针的反转，指向前驱结点，而 <code>next</code> 保留着目标结点原来的后继结点，以便访问和遍历。</p><p><img src="/blog-code/assets/20200826073751598_12813.cfb9f0f1.png" alt="三个指针"></p><p><img src="/blog-code/assets/20200826073822175_4318.900c3deb.png" alt="翻转当前结点的 next 指针"></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span> <span class="token parameter">head</span>
+ * <span class="token keyword">@return</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span>
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">reverseList</span><span class="token punctuation">(</span><span class="token parameter">head</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 初始化前驱结点和目标结点</span>
+  <span class="token keyword">let</span> pre <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> cur <span class="token operator">=</span> head<span class="token punctuation">;</span>
+
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>cur <span class="token operator">!==</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 记录当前结点原来的后继结点</span>
+    <span class="token keyword">let</span> next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+
+    <span class="token comment">// 反转指针</span>
+    cur<span class="token punctuation">.</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+    <span class="token comment">// 遍历链表</span>
+    <span class="token comment">// 指针向前走一步，直至 cur 为 null</span>
+    pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+    cur <span class="token operator">=</span> next<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 返回反转后的链表，指针 pre 是新链表的头结点</span>
+  <span class="token keyword">return</span> pre<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h2 id="局部翻转" tabindex="-1"><a class="header-anchor" href="#局部翻转" aria-hidden="true">#</a> 局部翻转</h2><blockquote><p>真题描述：反转从位置 <code>m</code> 到 <code>n</code> 的链表。请使用<strong>一趟扫描</strong>完成反转。💡 <code>1 ≤ m ≤ n ≤ 链表长度</code>。</p><p>示例：输入：<code>1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL</code>，<code>m = 2</code>，<code>n = 4</code> 输出：<code>1-&gt;4-&gt;3-&gt;2-&gt;5-&gt;NULL</code></p></blockquote><p>局部链表翻转除了要处理指定部分结点的 <code>next</code> 指针指向问题，还需要处理被逆序的区间前后的两个结点的 <code>next</code> 指针问题。</p><p><img src="/blog-code/assets/20200826081642058_15601.45c404e8.png" alt="局部翻转"></p><p>由于我们遍历链表的顺序是从前往后遍历，那么为了避免前面结点（区间头部结点和区间前的结点）随着遍历向后推进被遗失，我们需要提前<strong>把区间前的这两个结点缓存下来</strong>。而区间后的结点就没有这么麻烦，随着遍历的进行，当我们完成了区间内的指针反转后，此时 <code>cur</code> 指针就恰好指在区间后的结点上。</p><p>最后只需要将区间前的结点的 <code>next</code> 指针指向翻转后区间内的头结点，同时翻转前区间内的头结点的 <code>next</code> 指针指向区间后的结点即可将区间和外部结点「串」起来。</p><p><img src="/blog-code/assets/20200826082106082_19963.4327bb02.png" alt="区间内结点完成翻转后三个指针的状态"></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span> <span class="token parameter">head</span>
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>number<span class="token punctuation">}</span></span> <span class="token parameter">m</span>
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>number<span class="token punctuation">}</span></span> <span class="token parameter">n</span>
+ * <span class="token keyword">@return</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span>
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">reverseBetween</span><span class="token punctuation">(</span><span class="token parameter">head<span class="token punctuation">,</span> m<span class="token punctuation">,</span> n</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 定义 pre、cur、leftHead 指针</span>
+  <span class="token comment">// 其中 pre、cur 是翻转区间结点时使用的指针</span>
+  <span class="token comment">// 用 leftHead 来承接整个区间的前驱结点</span>
+  <span class="token keyword">let</span> pre<span class="token punctuation">,</span> cur<span class="token punctuation">,</span> leftHead
+  <span class="token comment">// 考虑区间包含头结点的情况，需要使用 dummy 结点</span>
+  <span class="token keyword">const</span> dummy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ListNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  dummy<span class="token punctuation">.</span>next <span class="token operator">=</span> head<span class="token punctuation">;</span>
+
+  <span class="token comment">// 创建一个游标 p，用于遍历，初始化指向 dummy</span>
+  <span class="token keyword">let</span> p <span class="token operator">=</span> dummy<span class="token punctuation">;</span>
+  <span class="token comment">// 往前走 m-1 步，到达区间的前驱结点</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>m<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    p <span class="token operator">=</span> p<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 指针 leftHead 记录下这个结点</span>
+  leftHead <span class="token operator">=</span> p<span class="token punctuation">;</span>
+  <span class="token comment">// 定义 start 指针记录原来区间的第一个结点</span>
+  <span class="token keyword">let</span> start <span class="token operator">=</span> leftHead<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+  pre <span class="token operator">=</span> start<span class="token punctuation">;</span>
+  cur <span class="token operator">=</span> pre<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+  <span class="token comment">// 遍历翻转区间内的结点</span>
+  <span class="token comment">// 直至 pre 指向区间内最后的结点，cur 指向区间的后继结点</span>
+  <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span>m<span class="token punctuation">;</span> i<span class="token operator">&lt;</span>n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 记录当前结点的后继结点</span>
+    <span class="token keyword">let</span> next <span class="token operator">=</span> cur<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    cur<span class="token punctuation">.</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+    <span class="token comment">// 向前走一步</span>
+    pre <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+    cur <span class="token operator">=</span> next<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 将区间的前驱结点指向翻转后的区间第一个结点</span>
+  leftHead<span class="token punctuation">.</span>next <span class="token operator">=</span> pre<span class="token punctuation">;</span>
+  <span class="token comment">// 将翻转后的区间的最后一个结点指向区间的后继结点</span>
+  start<span class="token punctuation">.</span>next <span class="token operator">=</span> cur<span class="token punctuation">;</span>
+
+  <span class="token comment">// 返回修改后链表的头结点</span>
+  <span class="token keyword">return</span> dummy<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">ListNode</span><span class="token punctuation">(</span><span class="token parameter">val</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>val <span class="token operator">=</span> val<span class="token punctuation">;</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span>next <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br></div></div><h2 id="判断链表成环" tabindex="-1"><a class="header-anchor" href="#判断链表成环" aria-hidden="true">#</a> 判断链表成环</h2><blockquote><p>真题描述：给定一个链表，判断链表中是否有环。</p><p>示例 1：输入：<code>[3,2,0,4]</code>（链表结构如下图） 输出：<code>true</code> 即链表中存在一个环 <img src="/blog-code/assets/20200827093741332_2354.05f7a31f.png" alt="链表成环"></p></blockquote><p>一个环形链表是能够让遍历它的游标回到原点，为走过的结点都「打上」标签 flag，即从 flag 出发只要能够再回到 flag 处，那么就意味着正在遍历一个环形链表。</p><p><img src="/blog-code/assets/20200827094141259_13396.6007472a.png" alt="flag"></p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span> <span class="token parameter">head</span>
+ * <span class="token keyword">@return</span> <span class="token class-name"><span class="token punctuation">{</span>boolean<span class="token punctuation">}</span></span>
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">hasCycle</span><span class="token punctuation">(</span><span class="token parameter">head</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 如果存在结点就继续遍历</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 判断当前结点是否已打 flag</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>head<span class="token punctuation">.</span>flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果已打 flag 证明链表成环</span>
+      <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 如果不存在 flag 就打上标签</span>
+      head<span class="token punctuation">.</span>flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token comment">// 往前走一步</span>
+      head <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 默认返回 false</span>
+  <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p>💡 这道题还有一个公认的比较经典的思路，就是用快慢指针来做：定义慢指针 <code>slow</code>，快指针 <code>fast</code>。两者齐头并进，<code>slow</code> 一次走一步、<code>fast</code> 一次走两步。这样如果它们是在一个有环的链表里移动，一定有相遇的时刻，</p><p>当移动的次数为 <code>t</code> 时，<code>slow</code> 移动的路程就是<code>t</code>，<code>fast</code> 移动的路程为<code>2t</code>，假如环的长度为 <code>s</code>，那么当下面这个条件满足时：</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token comment">// 如果刚好指针距离覆盖链表环的长度</span>
+<span class="token number">2</span>t <span class="token operator">-</span> t <span class="token operator">=</span> s
+
+<span class="token comment">// 此时</span>
+t <span class="token operator">=</span> s
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><code>slow</code> 和 <code>fast</code> 就一定会相遇。反之，如果两者没有相遇，同时 <code>fast</code> 遍历到了链表的末尾，发现 <code>next</code> 指针指向 <code>null</code>，则链表中不存在环。</p><h2 id="定位环形链表的环起点" tabindex="-1"><a class="header-anchor" href="#定位环形链表的环起点" aria-hidden="true">#</a> 定位环形链表的环起点</h2><blockquote><p>真题描述：给定一个链表，返回链表开始入环的第一个结点。 如果链表无环，则返回 null。</p><p>示例 1：输入：<code>head = [3,2,0,-4]</code>（如下图） 输出：<code>tail connects to node index 1</code> 即链表中有一个环，其尾部连接到第二个结点。 <img src="/blog-code/assets/20200827093741332_2354.05f7a31f.png" alt="示例1"></p><p>示例 2：输入：<code>head = [1,2]</code>（如下图）输出：<code>tail connects to node index 0</code> 即链表中有一个环，其尾部连接到第一个结点。 <img src="/blog-code/assets/20200827101159073_15907.d0e6ce21.png" alt="示例2"></p><p>示例 3：输入：<code>head = [1]</code>（如下图）输出：<code>no cycle</code> 即链表中没有环。 <img src="data:image/png;base64,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" alt="示例3"></p></blockquote><p>如果一个结点是环形链表成环的起点，那么<strong>它一定是第一个被发现 flag 标志已存在的结点</strong>，将对应的结点返回即可。</p><div class="language-javascript ext-js line-numbers-mode"><pre class="language-javascript"><code><span class="token doc-comment comment">/**
+ * <span class="token keyword">@param</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span> <span class="token parameter">head</span>
+ * <span class="token keyword">@return</span> <span class="token class-name"><span class="token punctuation">{</span>ListNode<span class="token punctuation">}</span></span>
+ */</span>
+
+<span class="token keyword">function</span> <span class="token function">detectCycle</span><span class="token punctuation">(</span><span class="token parameter">head</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 如果有节点就继续遍历</span>
+  <span class="token keyword">while</span><span class="token punctuation">(</span>head<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>head<span class="token punctuation">.</span>flag<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// 存在 flag 证明就是成环</span>
+      <span class="token comment">// 返回第一次碰到的 flag 对应的结点</span>
+      <span class="token keyword">return</span> head<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      head<span class="token punctuation">.</span>flag <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      head <span class="token operator">=</span> head<span class="token punctuation">.</span>next<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">return</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">更新时间: </span><span class="meta-item-info">2021/7/10 上午7:02:33</span></div><!----></footer><!----><!--[--><!--]--></main></div><div style="width:0px;" class="catalog-container absolute top-0 right-0 h-full hidden lg:block"><div class="headings-container sticky top-36" data-v-c28348e0><ul class="
+        max-w-max
+        m-2
+        pl-7
+        xl:pl-16
+        2xl:pl-20
+        py-4
+        opacity-50
+        hover:opacity-100
+        transition-all
+        duration-300
+      " data-v-c28348e0><!--[--><!--]--></ul></div></div><div style="display:none;" tabindex="0" class="
+          sidebar-container
+          fixed
+          inset-y-0
+          left-0
+          z-20
+          lg:hidden
+          opacity-10
+          hover:opacity-95
+        "><div class="headings-container
+      px-2
+      space-y-2
+      transition-all
+      duration-300 py-20" data-v-6eed9461><!--[--><!--]--></div></div></div><footer class="bg-gray-200 p-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-center" data-v-2981188c><div class="flex justify-center md:justify-start items-center" data-v-2981188c><a class="p-2 hover:bg-gray-300 rounded-md" href="https://benbinbin.github.io/" target="_blank" data-v-2981188c><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full" data-v-2981188c></a></div><div class="text-center space-y-0.5" data-v-2981188c><p class="text-sm text-gray-600" data-v-2981188c> ©2021 <span class="author" data-v-2981188c>Benbinbin</span>. All Right Reserved. </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 除特殊说明外，本站的文章遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" class="text-blue-400" data-v-2981188c>CC-BY-SA-4.0</a> 协议 </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 网站主题采用 <a href="https://github.com/Benbinbin/two-dishes-one-fish" target="_blank" class="text-blue-400" data-v-2981188c>Two Dishes One Fish</a></p></div><div class="
+        btn-container
+        flex
+        justify-center
+        md:justify-end
+        items-center
+        space-x-0.5
+      " data-v-2981188c><!--[--><a class="p-2 hover:bg-gray-300 rounded-md" href="mailto:benthomsonbin@gmail.com" target="" data-v-2981188c><img src="/blog-code/images/icons/email.svg" alt="email" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://github.com/Benbinbin" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/github.svg" alt="github" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://juejin.cn/user/3175045314389278/posts" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/juejin.svg" alt="juejin" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://dribbble.com/BinBinDesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/dribbble.svg" alt="dribbble" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://twitter.com/Benbinbin_fun" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/twitter.svg" alt="twitter" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://weibo.com/binbindesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/weibo.svg" alt="weibo" class="w-auto h-6" data-v-2981188c></a><!--]--></div></footer></div><!--]--></div>
+    <script type="module" src="/blog-code/assets/app.93fa4a4f.js" defer></script>
+  </body>
+</html>

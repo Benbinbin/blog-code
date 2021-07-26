@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="icon" href="/blog-code/images/favicon.ico"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.5/dist/katex.min.css"><title>Git 基础 | Blog</title><meta name="description" content="A blog and knowledge management system about coding."><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="generator" content="VuePress 2.0.0-beta.22">
+    <link rel="modulepreload" href="/blog-code/assets/app.93fa4a4f.js"><link rel="modulepreload" href="/blog-code/assets/Git基础.html.79351ad2.js"><link rel="modulepreload" href="/blog-code/assets/Git基础.html.000195aa.js">
+    <link rel="stylesheet" href="/blog-code/assets/style.cee61b43.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="min-h-screen flex flex-col"><nav class="px-4 sm:px-8 py-2 flex justify-between items-center sticky top-0 z-30 bg-white"><div class="left flex items-center space-x-0.5"><!--[--><button class="
+            catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden
+          " class="text-gray-400 hover:bg-gray-100 catelog-btn
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--><a class="avatar p-2 hover:bg-gray-100 rounded-md" href="/blog-code/#"><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full"></a></div><div class="right hidden sm:flex items-center space-x-0.5"><!--[--><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">All</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Git</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Github</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Docker</button><button class="
+          p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md
+        " class="text-gray-400 p-2
+          select-none
+          text-sm
+          font-bold
+          hover:text-gray-900
+          hover:bg-gray-100
+          rounded-md">Algorithm</button><!--]--><!--[--><button class="
+            p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block
+          " class="text-gray-900 bg-gray-100 hover:bg-gray-200 p-2
+            select-none
+            text-sm
+            font-bold
+            hover:text-gray-900
+            rounded-md
+            hidden
+            lg:block"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></button><!--]--></div><div class="more-container sm:hidden relative"><button style="" class="p-2 select-none hover:bg-gray-100 rounded-md text-gray-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"></path></svg></button><button style="display:none;" class="p-2 select-none hover:bg-gray-100 rounded-md text-red-400 hover:text-red-500"><svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"></path></svg></button><div style="display:none;" class="
+          more-modal
+          p-2
+          absolute
+          top-10
+          right-0
+          z-10
+          flex flex-col
+          space-y-2
+          bg-gray-100
+          rounded-md
+          opacity-90
+        "><!--[--><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">All</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Git</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Github</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Docker</button><button class="
+            px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md
+          " class="text-gray-400 px-4
+            py-2
+            select-none
+            text-sm text-center
+            font-bold
+            hover:text-gray-900
+            hover:bg-gray-200
+            rounded-md">Algorithm</button><!--]--></div></div></nav><div class="relative flex-grow"><div class="theme-container no-navbar no-sidebar"><!----><div class="sidebar-mask"></div><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--]--></ul><!--[--><!--]--></aside><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="git-基础" tabindex="-1"><a class="header-anchor" href="#git-基础" aria-hidden="true">#</a> Git 基础</h1><p>参考：<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="noopener noreferrer">Git Book</a></p><p>Git 是一个<strong>分布式</strong>版本控制系统，其核心功能是<strong>追踪文件的变更</strong>，即保留项目的详细<strong>历史记录</strong>，并且能够在不同的版本上进行工作。保留详细的项目历史记录很重要，可以看出一段时间内项目的进度，如果需要还可以并恢复数据或文件，回到项目的某个阶段。</p><p>版本控制系统 version control system，简称 VCS，是一个管理源代码不同版本的工具，除了 Git 软件外还有其他版本控制系统，如 <a href="https://subversion.apache.org/" target="_blank" rel="noopener noreferrer">Subversion</a>、<a href="https://www.mercurial-scm.org/" target="_blank" rel="noopener noreferrer">Mercurial</a> 等。版本控制系统模型包括两大主要类型：</p><ul><li><strong>集中式模型</strong> centralized version control systems, CVCS：所有用户都连接到一个中央的主仓库 <code>master repository</code></li><li><strong>分布式模型</strong> distributed version control systems, DVCS：每个用户都在自己的计算机上拥有完整的仓库</li></ul><p>💡 源代码管理器 source code manager，简称 SCM，是版本控制系统的另一个名称。Git 是一个 SCM（因此也是 VCS！）。Git 网站地址是 https://git-scm.com/ （它的域名中直接包含 &quot;SCM&quot;）。</p><h2 id="术语" tabindex="-1"><a class="header-anchor" href="#术语" aria-hidden="true">#</a> 术语</h2><p>参考：<a href="./attachments/Git-terms-cheatsheet.pdf">Git 关键术语</a> | <a href="./attachments/ud123-git-keyterms.pdf">英文版</a></p><h3 id="提交-commit" tabindex="-1"><a class="header-anchor" href="#提交-commit" aria-hidden="true">#</a> 提交 commit</h3><p>Git 将数据看做微型文件系统的一组<strong>快照</strong>。每次 commit （在 Git 中保持项目状态）它都对文件当时的状况拍照，并存储对该快照的引用，类似游戏中的保存点，它会保存项目的文件和关于文件的所有信息。commit 是 Git 中的基本单位。</p><h3 id="仓库-repository-repo" tabindex="-1"><a class="header-anchor" href="#仓库-repository-repo" aria-hidden="true">#</a> 仓库 Repository / repo</h3><p>仓库是一个包含项目内容以及几个文件（在 Mac OS X 上默认地处于<strong>隐藏状态</strong>）的目录，用来与 Git 进行通信。仓库可以存储在本地，或作为远程副本存储在其他计算机上。仓库是由 commit 构建的。</p><h3 id="工作目录-工作区-working-directory" tabindex="-1"><a class="header-anchor" href="#工作目录-工作区-working-directory" aria-hidden="true">#</a> 工作目录/工作区 Working Directory</h3><p>工作目录是你在计算机的文件系统中看到的文件。与这些文件形成对比的是保持在仓库中（在 commit 中，在 Mac OS X 上隐藏）的文件。</p><p>注意：在使用 Git 时，工作目录与命令行工具的 current working directory （当前工作目录）不一样，后者是 shell 当前正在查看的目录。</p><h3 id="检出-checkout" tabindex="-1"><a class="header-anchor" href="#检出-checkout" aria-hidden="true">#</a> 检出 Checkout</h3><p>检出是指将仓库中的内容<strong>复制</strong>到工作目录下。</p><h3 id="暂存区-暂存索引-索引-staging-area-staging-index-index" tabindex="-1"><a class="header-anchor" href="#暂存区-暂存索引-索引-staging-area-staging-index-index" aria-hidden="true">#</a> 暂存区/暂存索引/索引 Staging Area/Staging Index/Index</h3><p>Git 目录下的一个文件，<strong>存储的是即将进入下个 commit 内容的信息</strong>。可以将暂存区看做准备工作台，Git 将在此区域获取下个 commit。暂存索引中的文件是准备添加到仓库中的文件。</p><h3 id="sha" tabindex="-1"><a class="header-anchor" href="#sha" aria-hidden="true">#</a> SHA</h3><p><code>SHA</code> 是每个 commit 的 ID 编号。以下是 commit 的 <code>SHA</code> 示例：<code>e2adf8ae3e2e4ed40add75cc44cf9d0a869afeb6</code>。</p><p>它是一个<strong>长 40 个字符的字符串（由 0–9 和 a–f 组成），并根据 Git 中的文件或目录结构的内容计算得出</strong>。SHA 的全称是 &quot;Secure Hash Algorithm&quot; 安全哈希算法。</p><h3 id="分支-branch" tabindex="-1"><a class="header-anchor" href="#分支-branch" aria-hidden="true">#</a> 分支 Branch</h3><p>分支是从主开发流程中分支出来的新的开发流程。这种分支开发流程可以在不更改主流程的情况下继续延伸下去。</p><p>回到之前关于游戏保存点的示例，你可以将分支看做在游戏中设立保存点后，尝试一个有风险的招式。如果有风险的招式不奏效，则回到保存的位置。<strong>令分支非常强大的关键之处是你可以在一个分支上设定保存点，然后切换到另一个分支并继续设定保存点。</strong></p><h2 id="git-三大区域" tabindex="-1"><a class="header-anchor" href="#git-三大区域" aria-hidden="true">#</a> Git 三大区域</h2><p>Git 管理着三大区域，文件就在这三个区域之间移动：</p><ul><li><strong>工作区域 working directory</strong>：在工作区域对文件进行修改</li><li><strong>暂存区 staging index</strong>：暂存等待保存进入仓库的文件</li><li><strong>仓库 repository</strong>：通过 <code>commit</code> 命令将修改过或新建的且已在暂存区的文件保存到仓库中，每个 commit 都有唯一的 ID，即 SHA，可以通过相应的 ID 访问特定的提交</li></ul><h2 id="基本终端命令" tabindex="-1"><a class="header-anchor" href="#基本终端命令" aria-hidden="true">#</a> 基本终端命令</h2><p>Git 操作在 Git Bash 终端中进行，常用的命令：</p><ul><li><code>ls</code> 列出当前目录的文件（夹），当前目录</li><li><code>mkdir</code> 新建目录</li><li><code>cd</code> 更改目录</li><li><code>rm</code> 删除文件和目录</li><li><code>pwd</code> 输出工作目录（绝对路径）</li></ul><h2 id="新建仓库" tabindex="-1"><a class="header-anchor" href="#新建仓库" aria-hidden="true">#</a> 新建仓库</h2><p>参考：</p><ul><li><a href="https://git-scm.com/docs/git-init" target="_blank" rel="noopener noreferrer">git init 文档</a></li><li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository" target="_blank" rel="noopener noreferrer">git init 教程</a></li></ul><p>在对 Git 仓库进行 commit 或执行任何其他操作之前，需要一个实际存在的仓库。使用 <code>git init</code> 命令新建一个仓库</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 任务</span>
+<span class="token comment"># 创建一个目录 udacity-git-course</span>
+<span class="token comment"># 在该目录中创建另一个目录 new-git-project</span>
+<span class="token comment"># 切换当前路径到 new-git-project 目录下</span>
+
+<span class="token comment"># 创建目录并切换到目录</span>
+<span class="token function">mkdir</span> -p udacity-git-course/new-git-project <span class="token operator">&amp;&amp;</span> <span class="token builtin class-name">cd</span> <span class="token variable">$_</span>
+
+<span class="token comment"># 在当前目录下初始化生成一个空的 Git 仓库，创建成功后终端提示符会添加 master 关键字</span>
+<span class="token function">git</span> init
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><ul><li>创建目录 <code>mkdir</code> 设置的参数 <code>-p</code> 表示如果目录已存在则不会报错，递归创建</li><li>在 Git Bash 里复制操作快捷键为 <code>Ctrl + Insert</code> 粘贴快捷键为 <code>Shift + Insert</code></li><li>命令 <code>$_</code> 扩展到上一个命令的最后一个参数，或上一个命令（若上一个命令没有设置参数时）</li></ul><p><img src="/blog-code/assets/20191121231306446_13742.95ae88ad.png" alt="新建仓库"></p><p><code>git init</code> 命令的作用是在<strong>当前目录</strong>下初始化生成一个空的 Git 仓库，并将所有用于跟踪内容所必要文件和目录存储于 <code>.git</code>目录下（该目录开头有个点 <code>.</code>，表示在 Mac/Linux 上它将是一个隐藏目录）。<code>.git</code> 目录实际就是一个<strong>存储项目（当前目录下的项目）各版本的库</strong>，Git 会将所有 commit 记录在这里，并跟踪所有内容！</p><p><img src="/blog-code/assets/20191121233723215_2414.4c1a649d.png" alt="git仓库"></p><p>⚠️ <strong>请勿直接修改 .git 目录下的任何文件</strong>。这是仓库的核心。如果你更改了文件名或文件内容，Git 可能就无法跟踪你保存在仓库中的文件，可能会丢失很多内容！可以查看这些文件，但是请勿编辑或删除这些文件。</p><p><img src="/blog-code/assets/20191123114129288_29132.6fd3a1d6.png" alt="git核心"></p><p><code>.git</code> 中各项内容及作用：</p><ul><li><code>config</code> 文件：存储了所有与项目有关的配置设置，配置文件设置的配置值仅适用于当前仓库</li><li><code>description</code> 文件：此文件仅用于 GitWeb 程序，可忽略</li><li><code>hooks</code> 目录：存放客户端或服务器端脚本，以便用来连接到 Git 的不同生命周期事件</li><li><code>info</code> 目录：包含<strong>全局排除文件</strong></li><li><code>objects</code> 目录：存储提交的所有 commit</li><li><code>refs</code> 目录：此目录存储了指向 commit 的指针（通常是「分支」和「标签」）</li></ul><h2 id="克隆仓库" tabindex="-1"><a class="header-anchor" href="#克隆仓库" aria-hidden="true">#</a> 克隆仓库</h2><p>参考：</p><ul><li><a href="https://git-scm.com/docs/git-clone" target="_blank" rel="noopener noreferrer">git 克隆文档</a></li><li><a href="https://www.atlassian.com/git/tutorials/setting-up-a-repository" target="_blank" rel="noopener noreferrer">git 克隆教程</a></li></ul><p>克隆仓库是制作完全相同的仓库副本，如在制作 Web 项目可以克隆模板，简化配置步骤。使用 <code>git clone [url]</code> 命令并传入需要克隆的 Git 仓库的路径（通常是 URL），以创建仓库副本。</p><p>⚠️ 请在克隆任何内容之前<strong>验证终端位置</strong>，通过输入 <code>pwd</code> 命令查询工作目录，确保命令行工具已定位于正确的目录下。由于<strong>无法创建嵌套的 Git 仓库</strong>，因此需要确保终端的当前工作目录没有位于 Git 仓库中。</p><p>克隆项目会新建一个目录，并在这个目录下初始化一个 <code>.git</code> 文件夹，从远程仓库拉取下所有数据放入 <code>.git</code> 文件夹，然后从中<strong>读取最新版本的文件</strong>的拷贝到新建目录下。</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 切换当前目录至合理位置（无 Git 仓库），如 udcity-git-course</span>
+$ <span class="token function">git</span> clone https://github.com/udacity/course-git-blog-project
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="/blog-code/assets/20191123115144238_16955.967e2b2c.png" alt="克隆仓库"></p><p><img src="/blog-code/assets/20191123120142305_5017.2cbeb5c0.png" alt="course_git_blog_poject"></p><p>💡 在克隆仓库时，会在当前目录下创建一个同名目录，若需要自定义本地仓库的名字，可在运行上述命令结束后手动重命名；或在终端上使用 <code>mv</code> 重命名；或在克隆时指定本地创建的仓库名字 <code>git clone [url] project_name</code></p><p>💡 使用 <code>git clone</code> 命令会在当前工作目录下创建新的仓库，但 shell 工作目录并不改变（根据终端的提示符进行判断 shell 当前所在的目录），如果位于 Git 仓库目录下，提示符将包含一个用小括号包含的关键字 <code>master</code>（或其他分支的名称）。<strong>克隆结束后需要使用 <code>cd</code> 命令</strong>切换到新的仓库中，才可以对仓库进行后续操作。</p><h2 id="仓库状态" tabindex="-1"><a class="header-anchor" href="#仓库状态" aria-hidden="true">#</a> 仓库状态</h2><p>参考：</p><ul><li><a href="https://git-scm.com/docs/git-status" target="_blank" rel="noopener noreferrer">git status 文档</a></li><li><a href="https://www.atlassian.com/git/tutorials/inspecting-a-repository/git-status" target="_blank" rel="noopener noreferrer">git status 教程</a></li></ul><p>命令 <code>git status</code> 查询仓库状态，返回关于仓库的信息：</p><ul><li>目前所在的分支</li><li>已在工作目录中被创建但 Git 尚未开始跟踪的新文件</li><li>Git 正在跟踪的已修改文件</li><li>……</li></ul><p><img src="/blog-code/assets/20191123163009784_14633.1f086d28.png" alt="克隆仓库状态"></p><ul><li><code>On branch master</code> 表示 Git 位于 <code>master</code> 分支（默认分支）上</li><li><code>Your branch is up-to-date with &#39;origin/master&#39;.</code> 由于该仓库是从远程仓库克隆而创建的，这部分告诉我们项目是否与所复制的仓库<strong>保持同步状态</strong>（目前显示是最新状态）</li><li><code>nothing to commit, working directory clean</code> 表示没有任何待定（提交到仓库）的更改</li></ul><p><img src="/blog-code/assets/20191123165430232_5740.e8ba8e0e.png" alt="新建仓库状态"></p><p>新建仓库状态与克隆所建（有内容的）仓库类似，但是由于其并未包含任何 commit 所以会返回 <code>No commits yet</code> 的信息</p><ul><li>应该在任何一个其他 git 命令之前和之后运行 <code>git status</code> 命令，确保修改得到了正确的处理（提交）</li><li>在一段时间之后再回到某个项目时，始终先运行 <code>git status</code> 命令以检出该项目，并初步了解仓库的操作信息</li></ul><h2 id="查看仓库历史" tabindex="-1"><a class="header-anchor" href="#查看仓库历史" aria-hidden="true">#</a> 查看仓库历史</h2><p>在版本控制中应该<strong>频繁</strong>提交<strong>详细</strong>的记录，以便追踪项目逐步进展情况。Git 会自动记录创建提交时的日期时间和所作的内容更改，用户只需要设置每次 commit 标题或说明。</p><p>使用命令 <code>git log</code> 或 <code>git show</code> 查看查看仓库历史记录：</p><ul><li><code>git log</code> 显示仓库中所有 commit 的信息</li><li><code>git show</code> 显示有关给定 commit 的信息，因此需要提供所需查询的 commit ID（即 SHA）</li></ul><h3 id="命令-git-log" tabindex="-1"><a class="header-anchor" href="#命令-git-log" aria-hidden="true">#</a> 命令 <code>git log</code></h3><p><img src="/blog-code/assets/20191123200309211_1022.1ae34513.png" alt="git log"></p><p>命令 <code>git log</code> 默认情况下返回 commit 的以下信息：</p><ul><li>SHA：每个 commit 的完整 SHA。每个 SHA 都是唯一的（即每个 commit 都产生独一无二标记），一般不需要查看整个 SHA，只需知道前 6-8 个字符即可</li><li>作者：即提交信息，可在 <code>user.name</code> 中设置</li><li>日期</li><li>消息：提交者填写的注释信息，以描述该次 commit 的作用。</li></ul><h4 id="选项-oneline" tabindex="-1"><a class="header-anchor" href="#选项-oneline" aria-hidden="true">#</a> 选项 <code>--oneline</code></h4><p>命令 <code>git log</code> 可以设置选项 <code>--oneline</code> 以显示简化版的历史信息，<strong>每个 commit 显示一行</strong>，包括该提交的 SHA 的前七个字符，以及提交说明</p><h4 id="选项-stat" tabindex="-1"><a class="header-anchor" href="#选项-stat" aria-hidden="true">#</a> 选项 <code>--stat</code></h4><p>命令 <code>git log</code> 可以设置选项 <code>--stat</code>（代表 statistics 统计）以显示 commit 中<strong>被更改的文件以及添加或删除的行数</strong>。以 <code>+</code> 或 <code>-</code> 号表示添加或删除的行数，最后显示一个摘要包含修改/删除的总文件数和总行数。</p><p><img src="/blog-code/assets/20191123203614812_13539.0db15a6a.png" alt="列出了被更改的文件以及添加或删除的行数"></p><h4 id="选项-p" tabindex="-1"><a class="header-anchor" href="#选项-p" aria-hidden="true">#</a> 选项 <code>-p</code></h4><p>命令 <code>git log</code> 可以设置<a href="https://git-scm.com/docs/git-diff#_generating_patches_with_p" target="_blank" rel="noopener noreferrer">选项</a> <code>-p</code>（或 <code>--p</code>），代表 patch 修补，以显示具体的修改内容，以对比形式 <code>diff</code> 列出。</p><p><img src="/blog-code/assets/20191123212454417_31704.a185089f.png" alt="查看修改内容"></p><ul><li>🔵 <code>diff</code> 标注行表示正在对比的文件（可能是文件名文件，但也支持追踪重命名后的两个同源文件），其中第一版（原版）文件以目录 <code>a</code> 表示，第二版文件以目录 <code>b</code> 表示（这两个 <code>a</code>、<code>b</code> 目录并不会在库里实际可见），下方 <code>--- a/index.html</code> 和 <code>+++ b/index.html</code> 表意一样</li><li>🔶 <code>index</code> 标注行表示文件第一版的哈希值 <code>0382322</code> 和第二版的哈希值 <code>43f5b28</code>（与 SHA 不同）通常不重要可忽略</li><li>❤️ <code>---</code> 表示旧版本，<code>+++</code> 表示当前版本</li><li>🔍 <code>@@</code> 标注行展示代码定位和数量，<code>-</code> 表示原版本，<code>+</code> 表示当前版本。他们后面两个数字分别表示：第一个数字是起始代码的位置（行号），第二个数字表示显示代码的数量（行数） <ul><li><code>-15,83</code> 表示旧版本代码从第 15 行开始，显示了 83 行（即原始版本截取了 83 行代码显示）</li><li><code>+15,85</code> 表示当前版本从第 15 行开始，由于增添了代码，所以第二版本显示了 85 行</li></ul></li><li>✏️ 代码行中显示了在 commit 中实际进行的更改 <ul><li>代码行开头标注减号 <code>-</code> 表示该行在文件原始版本中，但是被 commit 删除的行</li><li>代码行开头标注加号 <code>+</code> 表示该行是 commit 新加的行</li></ul></li></ul><p>💡 <strong>Git 以行为单位追踪修改，对于行的操作可以是删除会插入</strong>。但实际操作可能只是增添了一个空格或缩进（而非把整一行删除后在插入），而补丁输出显示所有行先被删掉，然后在新的缩进位置又被重新添加。可以对命令 <code>git log -p</code> 设置选项 <code>-w</code> <strong>忽略空格更改</strong>，在查询具体代码修改时不显示这一类的更改</p><h3 id="命令-git-show" tabindex="-1"><a class="header-anchor" href="#命令-git-show" aria-hidden="true">#</a> 命令 <code>git show</code></h3><p>使用命令 <code>git log</code> 查询所有的 commit（也通过设置参数提供 SHA，作为最后一个参数，只需提供七个字符，只显示在所提供的 SHA <strong>之前提交的所有 commit 信息</strong>）。若只需查看特定一个 commit 可以使用命令 <code>git show</code>，默认显示最近依次 commit，可以将 SHA 作为最后一个参数，访问特定的 commit。</p><p>默认显示信息和命令 <code>git log -p</code> 类似：</p><ul><li>commit</li><li>作者</li><li>日期</li><li>commit 消息</li><li>补丁信息</li></ul><p>此外该命令也可以设置类似的选项：</p><ul><li><code>--stat</code> 显示更改了多少文件，以及添加/删除的行数</li><li><code>-p</code> 或 <code>--patch</code> - 显示默认补丁信息</li><li><code>-w</code> 忽略空格变化</li></ul><h2 id="添加-commit" tabindex="-1"><a class="header-anchor" href="#添加-commit" aria-hidden="true">#</a> 添加 commit</h2><p>为了让 git 跟踪项目的新建的文件，要将这些文件提交到仓库。</p><p>但是提交文件需要先放入暂存区，因此流程为：</p><ol><li>在<strong>工作区</strong>的修改需要使用命令 <code>git.add</code> 将它们添加到<strong>暂存区</strong> stage</li><li>使用命令 <code>git.commit</code> 将暂存区文件提交到<strong>仓库</strong></li></ol><h3 id="添加到暂存区" tabindex="-1"><a class="header-anchor" href="#添加到暂存区" aria-hidden="true">#</a> 添加到暂存区</h3><p>命令 <code>git add</code> 将新建或修改文件添加到暂存区，在添加暂存区之前应该使用命令 <code>git status</code> 查看工作区作出了几个更改（文件）</p><p><img src="/blog-code/assets/20191124103332766_8414.b3c0bec7.gif" alt="将工作区文件添加到暂存区"></p><p>在目录 <code>new-git-project</code> 仓库中新建了三个文件 <code>index.html</code>、<code>css/app.css</code>、<code>js/app.js</code>，将其添加到暂存区 stage 中</p><p><img src="/blog-code/assets/20191124102942971_15126.5ceabd98.png" alt="新建文件后查看 git status"></p><p>新建三个文件后使用命令 <code>git status</code> 输出提示为 <code>Untracked files</code> 包含这三个文件，即 git 还没有跟踪这些文件。</p><p><img src="/blog-code/assets/20191124103620980_30568.903a8021.png" alt="暂存 html 文件"></p><p>使用命令 <code>git add &lt;file&gt;</code> 将 <code>&lt;file&gt;</code> 文件添加到暂存区。使用命令 <code>git status</code> 查询输出显示 <code>index.html</code> 现在位于 <code>&quot;Changes to be committed&quot;</code> 分类下（该区域显示了位于暂存区的文件，这些文件等待 commit）</p><p>⚠️ <code>&quot;Changes to be committed&quot;</code> 下方的帮助文本提示当不小心运行了 <code>git add</code> 将文件错误地添加到了暂存区，可使用该命令将文件从暂存区删掉（但该操作与 shell 的 <code>rm</code> 命令不同），<code>unstage</code> 是指撤销暂存把文件移回工作区，<strong>并不破坏文件</strong>；相应的将文件从工作目录移到暂存区叫做 <code>staging</code>暂存；如果已移动文件，则叫做 <code>staged</code> 已暂存。</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 将 &lt;file&gt; 文件从暂存区删除，</span>
+$ <span class="token function">git</span> <span class="token function">rm</span> --cached <span class="token operator">&lt;</span>file<span class="token operator">&gt;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p><img src="/blog-code/assets/20191124105254052_214.0759d28b.png" alt="暂存剩余的所有文件"></p><ul><li>命令 <code>git add &lt;file1&gt; &lt;file2&gt; … &lt;fileN&gt;</code> 可接受多个文件名，用空格 Space 分隔</li><li>命令 <code>git add .</code> 使用句点 <code>.</code> 来代替文件列表，添加当前目录（包含的所有文件以及所有嵌套文件）至暂存区</li></ul><h3 id="添加到仓库" tabindex="-1"><a class="header-anchor" href="#添加到仓库" aria-hidden="true">#</a> 添加到仓库</h3><p>使用命令 <code>git commit</code> 将暂存区的（修改后）文件添加到仓库。运行命令后 git 会调用并打开<strong>代码编辑器</strong>，此时终端会冻结，以等待用户完成在代码编辑器中输入 Commit 消息解释说明；待用户关闭编辑器窗口，终端再输出该次 commit 信息并完成提交</p><p>在 Shell 终端输入命令 <code>git commit</code> 后 git 打开预设的代码编辑器 Visual Studio Code（默认打开内置的代码编辑器 Vim，可在 Git 配置中设置</p><p>参考：<a href="https://help.github.com/articles/associating-text-editors-with-git/" target="_blank" rel="noopener noreferrer">将文本编辑器与 git 相关联</a></p><p><img src="/blog-code/assets/20191124125623360_3929.5e072f5f.png" alt="在代码编辑器 VS Code 中输入 commit 消息"></p><ul><li>代码编辑器打开的文件提供能注释，指导填写 commit 信息： <ul><li>第一段精确地告诉了我们需要执行的操作，为该 commit 提供一条消息</li><li>任何以字符 <code>#</code> 开头的行将被忽略</li><li>这将是初始提交 <code>Initial commit</code></li><li>最后列出了提交 commit 的文件列表</li></ul></li><li>在代码编辑器第一行输入这次的 commit 信息为 <code>Initial commit</code> 以表示这是首次提交</li><li>关闭 git commit 命令打开的代码编辑器窗口（关闭面板/标签页是不够的）</li></ul><p><img src="/blog-code/assets/20191124133550964_11673.b0d3a581.png" alt="提交后终端输出 commit 信息"></p><p>关闭代码编辑器后终端显示了这次 commit 的信息，包括这次提交对应的 SHA、修改的文件数、更改的代码行数以及被添加的具体文件。</p><p>💡 如果你要编写的提交说明很简短，可以直接在命令 <code>git commit</code> 设置选项 <code>-m</code> 传入信息（而不必打开代码编辑器）如示例可以使用命令 <code>$ git commit -m &quot;Initial commit&quot;</code></p><p>💡 提交 commit 原则是每个 commit 应该记录一项更改。一个 commit 不应包含不相关的更改，对于多项更改先进行一项更改，提交该更改，然后再进行第二项更改。如果一个更改有 bug，你需要撤消该更改时，则不用同时撤消另一个更改。</p><p>💡 编写 Git Commit Message 建议</p><ul><li>消息篇幅简短（少于 60 个字符）</li><li>解释提交的作用（不是如何更改（这是命令 <code>git log -p</code> 的目的，通过展示具体的代码可知）或为何更改！）</li><li>可以添加解释提交的原因。在代码编辑器中编写提交说明时，第一行是消息本身，<strong>消息之后空一行</strong>，然后输入正文或说明，包括关于为何需要该 commit 的原因详情（例如 URL 链接）。（而查看时如果使用了命令 <code>git log --oneline</code> 只能查看说明（第一行），应使用 <code>git log</code> 或 <code>git show</code> 以查看完整的说明正文）</li><li>请勿使用单词 <code>and</code>（如果你必须使用则说明这一次提交可能进行了太多的更改，将这些更改拆分为独立的 commit）</li><li>在编写提交说明时保持一致性，可以使用短语句式 <code>This commit will…</code></li></ul><p>参考：</p><ul><li><a href="https://chris.beams.io/posts/git-commit/" target="_blank" rel="noopener noreferrer">如何编写 Git Commit Message</a>（<a href="https://www.jianshu.com/p/0117334c75fc" target="_blank" rel="noopener noreferrer">译文</a> ）</li><li><a href="http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html" target="_blank" rel="noopener noreferrer">Commit message 和 Change log 编写指南</a></li></ul><h2 id="相关-commit-引用" tabindex="-1"><a class="header-anchor" href="#相关-commit-引用" aria-hidden="true">#</a> 相关 commit 引用</h2><p>可以使用 SHA、标签、分支和 <code>HEAD</code> 指针引用 commit。有时候这些并不足够，可能需要引用相对于另一个 commit 的 commit。可以使用特殊的「祖先引用」字符来告诉 git 这些相对引用：</p><ul><li><code>^</code>表示父 commit</li><li><code>~</code>表示第一个父 commit，该字符 <code>~</code>（与 <code>^</code> 字符相比）作用主要体现在通过合并而创建的 commit 中。合并 commit 具有两个父级，<code>^</code> 引用表示第一个父 commit，即当你运行 <code>git merge</code> 时所处的分支；而 <code>^2</code> 表示第二个父 commit，即被合并的分支。</li></ul><p>常用的 commit 相对引用：</p><ul><li>父 commit <ul><li><code>HEAD^</code></li><li><code>HEAD~</code></li><li><code>HEAD~1</code></li></ul></li><li>祖父 commit <ul><li><code>HEAD^^</code></li><li><code>HEAD~2</code></li></ul></li><li>曾祖父 commit <ul><li><code>HEAD^^^</code></li><li><code>HEAD~3</code></li></ul></li></ul><h2 id="撤销-commit" tabindex="-1"><a class="header-anchor" href="#撤销-commit" aria-hidden="true">#</a> 撤销 commit</h2><p>撤销 commit 可以将相应的提交从仓库中删除，但使用时需慎重。</p><h3 id="修改最近一次-commit" tabindex="-1"><a class="header-anchor" href="#修改最近一次-commit" aria-hidden="true">#</a> 修改最近一次 commit</h3><p>命令 <code>git commit --amend</code> 更改最近的 commit。</p><ul><li><p>修改 commit 信息：如果工作目录没有内容（也就是仓库中没有任何未 commit 的更改），运行命令 <code>git commit --amend</code> 代码编辑器将打开，并显示原始 commit 消息。此时可以纠正拼错的单词或提供重新表述，然后保存文件并关闭编辑器，以更新最近一次 commit 消息。</p></li><li><p>增添修改：若提交中有纰漏，可以再次编辑文件，暂存文件，但在提交时使用命令 <code>git commit --amend</code> 以更新最近的 commit，而不是创建新的 commit（以避免针对完全相同的任务由于更新纰漏造成两次提交）</p></li></ul><h3 id="还原-commit" tabindex="-1"><a class="header-anchor" href="#还原-commit" aria-hidden="true">#</a> 还原 commit</h3><p>参考：</p><ul><li><a href="https://git-scm.com/docs/git-revert" target="_blank" rel="noopener noreferrer">git-revert</a></li><li><a href="https://www.atlassian.com/git/tutorials/undoing-changes" target="_blank" rel="noopener noreferrer">git revert</a> 教程</li></ul><p>还原 revert 是指 git 执行和 commit 中的更改<strong>完全相反的更改</strong>。命令 <code>git revert &lt;SHA-of-commit-to-revert&gt;</code> 撤销目标 commit 同时创建一个新的 commit 记录这次还原更改（提交信息推荐使用默认提供的 commit 消息）</p><h3 id="重置-commit" tabindex="-1"><a class="header-anchor" href="#重置-commit" aria-hidden="true">#</a> 重置 commit</h3><p>参考：</p><ul><li><a href="https://git-scm.com/docs/git-reset" target="_blank" rel="noopener noreferrer">git-reset</a></li><li><a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%87%8D%E7%BD%AE%E6%8F%AD%E5%AF%86" target="_blank" rel="noopener noreferrer">Git 工具 - 重置揭密</a></li><li><a href="https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection#Ancestry-References" target="_blank" rel="noopener noreferrer">祖先引用</a>（<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E9%80%89%E6%8B%A9%E4%BF%AE%E8%AE%A2%E7%89%88%E6%9C%AC" target="_blank" rel="noopener noreferrer">中译版</a>）</li></ul><p>⚠️ 重置 reset 会清除 commit！它所包含的内容也会消失，请谨慎使用。命令 <code>git rest &lt;reference-to-commit&gt;</code> 移动 <code>HEAD</code> 指针「回滚」到相对引用所对应的 commit，并清除当前分支该 commit 前方的所有提交，根据命令设置的选项对这些 commit 的更改「撤回」到相应的空间</p><p><img src="/blog-code/assets/20191125232007335_276.776c7fd5.png" alt="重置 commit"></p><ul><li>命令设置选项 <code>--mixed</code>（默认值）把移动后 <code>HEAD</code> 指针前的 commit 中做出的更改移至工作目录中</li><li>命令设置选项 <code>--soft</code> 把移动后 <code>HEAD</code> 指针前的 commit 中做出的更改移至暂存区</li><li>命令设置选项 <code>--hard</code> 更改被清除。</li></ul><p>重置到父 commit 命令设置选项 <code>--mixed</code></p><p><img src="/blog-code/assets/20191125233006182_14015.18e917ba.png" alt="重置 commit 且更改移至工作区"></p><ul><li>可以重置到 SHA 所对应的特定 commit 使用命令 <code>git reset &lt;SHA&gt;</code></li><li>在执行 reset 操作前请 💡备份分支💡，通常会在最近的 commit 上创建一个 <code>backup</code> 分支，以便出现错误可以返回这些 commit</li></ul><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">git</span> branch backup
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><ul><li><p>恢复原有 commit 只需要（先从工作目录中删除未 commit 的更改）将当前分支指向 <code>backup</code> 分支即可，会进行快进合并将 <code>backup</code> 合并到当前分支，把当前分支向上移动到和 <code>backup</code> 一样的点</p><p>示例中使用 <code>git reset HEAD^</code> 将分支重置到 父 commit，撤回的更改即文件 <code>index.html</code> 移到工作区。要恢复分支所有 commit 需要先删除工作区的 <code>index.html</code> 文件</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">git</span> checkout -- index.html
+$ <span class="token function">git</span> merge backup
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></li><li><p>git 会在完全清除任何内容之前，持续跟踪大约 30 天。使用命令 <code>git reflog</code>可调用这些内容 。请参阅以下链接以了解详情</p><ul><li><a href="https://git-scm.com/docs/git-reflog" target="_blank" rel="noopener noreferrer">git-reflog</a></li><li><a href="https://www.atlassian.com/git/tutorials/rewriting-history" target="_blank" rel="noopener noreferrer">重写历史记录</a></li><li><a href="http://gitready.com/intermediate/2009/02/09/reflog-your-safety-net.html" target="_blank" rel="noopener noreferrer">reflog，你的安全屏障</a></li></ul></li></ul><h2 id="压制-commit" tabindex="-1"><a class="header-anchor" href="#压制-commit" aria-hidden="true">#</a> 压制 commit</h2><p>参考：</p><ul><li><a href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing" target="_blank" rel="noopener noreferrer">Git 分支 - 变基</a>（<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%8F%98%E5%9F%BA" target="_blank" rel="noopener noreferrer">中译版</a>）</li><li><a href="https://git-scm.com/docs/git-rebase" target="_blank" rel="noopener noreferrer">git-rebase</a></li><li><a href="https://www.atlassian.com/git/tutorials/rewriting-history#git-rebase" target="_blank" rel="noopener noreferrer">Atlassian 博客</a></li></ul><p>命令 <code>git rebase</code> 将多个 commit 压制 squash，即将多个 commit 合并成一个 commit。<code>git rebase</code> 也称为 <strong>变基</strong>，将 commit 移动到一个新基底 base 上，如命令 <code>git rebase -i HEAD~3</code> （选项 <code>-i</code> 代表 交互式 逐步操作，推荐使用）告诉 Git 使用 <code>HEAD~3</code> 作为其他所有 commit （<code>HEAD~2</code>、<code>HEAD~1</code> 和 <code>HEAD</code>）将连接到的基底。</p><p>使用命令 <code>git rebase -i HEAD~3</code> 将最近三个 commit 压制为一个</p><p>🎦 <a href="https://www.jianguoyun.com/p/DeXt5i8QjNDGBxjL-uAD" target="_blank" rel="noopener noreferrer">压制 commit</a></p><ul><li><p>在此操作中我必要进行<strong>强制推送</strong>分支。我不得不这样做，因为 GitHub 试图阻止我意外删除 commit。因为我使用了 <code>git rebase</code> 命令，实际上清除三个分别记录我添加了佛罗里达、巴黎和苏格兰的 commit。我使用 git rebase 将这些 commit 合并或压制为单个 commit，相当于创建一个具有新 SHA 的提交。当我尝试使用 <code>git push</code> 将此 commit 推送至 GitHub 时，GitHub 知道接受此推送会删除那三个单独 commit，所以它拒绝了（这实际上是对你的一种帮助，确保你已经审查过正在推送的 commit 和 GitHub 上的 commit，以验证你不会意外覆盖你在远程仓库上存储的内容！）。因此，我不得不使用 <code>git push -f</code> 强制推送这些 commit。</p></li><li><p>命令 <code>git rebase</code> 根据选项不同可执行不同的命令</p><ul><li>设置选项 <code>p</code> 或 <code>pick</code> 表示 commit <strong>保持原样</strong></li><li>设置选项 <code>r</code>或 <code>reword</code> 表示保留 commit 的内容，但修改 commit 说明</li><li>设置选项 <code>e</code> 或 <code>edit</code> 表示保留 commit 的内容，但先不要执行 commit，以便： <ul><li>添加新内容或文件</li><li>删除内容或文件</li><li>修改即将 commit 的内容</li></ul></li><li>设置选项 <code>s</code> 或 <code>squash</code> 表示将此 commit 的更改<strong>结合</strong>到之前的 commit 中（列表中位于其上面的 commit ）</li><li>设置选项 <code>f</code> 或 <code>fixup</code> 表示将此 commit 的更改结合到前一个 commit 中，但删除提交说明</li><li>设置选项 <code>x</code> 或 <code>exec</code> 表示运行 shell 命令</li><li>设置选项 <code>d</code> 或 <code>drop</code> 表示删除 commit</li></ul></li></ul><p>⚠️ <code>git rebase</code> 命令非常强大，可以帮助你编辑提交说明、重新排序 commit、合并 commit 等，但可能由于变基破环远程协作的流程。如果你在与其他开发者协作，那么他们可能已经在使用你推送的 commit。如果你随后使用 <code>git rebase</code> 来进行更改，并强行推送 commit，则其他开发者现在将无法与远程仓库同步。他们需要对自己的 Git 仓库进行一些复杂的手术，使它们的仓库回到工作状态……甚至可能连这一点都做不了；他们可能得抛弃之前的所有工作，使用你新变基过且强制推送的 commit 重新开始。<strong>因此如果你已推送了你想进行变基的 commit，则不应变基。</strong></p><h2 id="查看更改" tabindex="-1"><a class="header-anchor" href="#查看更改" aria-hidden="true">#</a> 查看更改</h2><p>命令 <code>git diff</code> 查看当前工作区<strong>已加入 git 跟踪的文件，但是尚未提交的更改</strong>。实际上 <code>git log -p</code> 其实就是在后台使用了 <code>git diff</code>。命令 <code>git diff</code> 输出工作区修改的具体信息：</p><ul><li>已经修改的文件</li><li>添加/删除的行所在的位置</li><li>执行的实际更改</li></ul><p>在 <code>index.html</code> 中重新组织标题的措辞，将标题从<code>Expedition</code> 改为 <code>Adventure</code></p><p><img src="/blog-code/assets/20191124145801921_27239.b755a74d.png" alt="查看文件具体更改"></p><h2 id="忽略文件" tabindex="-1"><a class="header-anchor" href="#忽略文件" aria-hidden="true">#</a> 忽略文件</h2><p>参考：</p><ul><li><a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files" target="_blank" rel="noopener noreferrer">忽略文件</a>|<a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93" target="_blank" rel="noopener noreferrer">中</a></li><li><a href="https://git-scm.com/docs/gitignore#_pattern_format" target="_blank" rel="noopener noreferrer">gitignore 匹配模式</a> git 文档</li><li><a href="https://help.github.com/articles/ignoring-files/" target="_blank" rel="noopener noreferrer">忽略文件</a> GitHub 文档</li><li><a href="https://www.gitignore.io/" target="_blank" rel="noopener noreferrer">gitignore.io</a>：提供了针对不同编程语言预设的 <code>.gitignore</code> 文件下载</li></ul><p>文件 <code>.gitignore</code> 用来告诉 git 不应跟踪的文件。如果想将某些文件保留在项目的目录结构中，但却不想提交到项目中进行跟踪，可以将这些文件记录在 <code>.gitignore</code>文件中</p><p>在项目目录下新建了 <code>project.docx</code> 文件，但不需要进行跟踪.将该文件添加到 <code>.gitignore</code> 文件中，并通过命令 <code>git status</code> 查看监测状态</p><p><img src="/blog-code/assets/20191124155044992_28293.1fcf66f8.png" alt="忽略文件"></p><ul><li><code>.gitignore</code> 文件应该放在 <code>.git</code> 目录所在的目录（一般是项目的根目录）</li><li>由于在 Windows 系统中无法创建没有文件名的文件，推荐使用代码编辑器如 VS Code 创建 <code>.gitignore</code></li><li>使用<strong>通配符</strong>批量忽略文件名符合规则的文件。常见通配符如下 <ul><li><code>*</code> 字符匹配 0 个或多个字符</li><li><code>?</code> 字符匹配 1 个字符</li><li><code>[abc]</code> 与 <code>a</code>、<code>b</code> 或 <code>c</code> 匹配</li></ul></li></ul><h2 id="标签" tabindex="-1"><a class="header-anchor" href="#标签" aria-hidden="true">#</a> 标签</h2><p>参考：</p><ul><li>git 基础知识 - <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging" target="_blank" rel="noopener noreferrer">添加标签</a>|<a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE" target="_blank" rel="noopener noreferrer">中</a></li><li><a href="https://git-scm.com/docs/git-tag" target="_blank" rel="noopener noreferrer">git tag</a></li></ul><p>命令 <code>git tag</code> 可对特定的 commit 进行标记，以更适合阅读和记忆的方式将该 commit 与其他提交区分出来。标签是关联相应 commit 的永久指针（与之相对的是分支指针 <code>&lt;HEAD&gt;</code> 随 commit 移动）。</p><p><img src="/blog-code/assets/20191124170114997_8118.cf1afad2.png" alt="添加标签"></p><ul><li>命令 <code>git tag &lt;tag_name&gt;</code> 为最近的 commit 添加轻量级标签，可以设置选项 <code>-a</code> 创建带注释的标签，提供更详细的信息，一般在标签注释中可以记录如下信息 <ul><li>标签创建者</li><li>标签创建日期</li><li>标签消息</li></ul></li><li>需要对特定（以前）commit 添加标签，可以在命令 <code>git tag</code> 最后设置 commit 相对应的 SHA，如 <code>$ git tag -a v1.0 a87984</code></li></ul><h3 id="查询标签" tabindex="-1"><a class="header-anchor" href="#查询标签" aria-hidden="true">#</a> 查询标签</h3><p>查询标签有多种方法：</p><ul><li>命令 <code>git tag</code> 返回所有标签</li><li>命令 <code>git log</code>（在 2.13 版 git 中，<code>git log</code> 命令已改为自动启用 <code>--decorate</code> 选项） 或 <code>git log --decorate</code> 返回的标签与 SHA 位于同一行</li></ul><p><img src="/blog-code/assets/20191124174723785_10228.cbdfcec8.png" alt="多种方法查询标签"></p><h3 id="删除标签" tabindex="-1"><a class="header-anchor" href="#删除标签" aria-hidden="true">#</a> 删除标签</h3><p>使用命令 <code>git tag -d &lt;tag_name&gt;</code>（选项 <code>-d</code> 表示 delete 删除）删除指定的 git 标签 <code>&lt;tag_name&gt;</code></p><p><img src="/blog-code/assets/20191124174948372_32376.8f89da7a.png" alt="删除标签"></p><h2 id="分支" tabindex="-1"><a class="header-anchor" href="#分支" aria-hidden="true">#</a> 分支</h2><p>参考：</p><ul><li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank" rel="noopener noreferrer">git 分支 - 分支的新建与合并</a>(<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6" target="_blank" rel="noopener noreferrer">中译版</a>）</li><li><a href="http://learngitbranching.js.org/" target="_blank" rel="noopener noreferrer">了解 git 分支</a></li><li><a href="https://www.atlassian.com/git/tutorials/using-branches" target="_blank" rel="noopener noreferrer">git 分支教程</a></li></ul><p>分支是允许我们<strong>对同一个项目进行不同操作</strong>的隔离环境，分支常用来进行开发或对项目进行修正而不会影响到项目（因为更改是在分支上进行的）。</p><h3 id="创建分支" tabindex="-1"><a class="header-anchor" href="#创建分支" aria-hidden="true">#</a> 创建分支</h3><p>git 默认分支为 <code>MASTER</code>，可通过命令 <code>git branch new_branch</code> 创建新分支，且指向最新的 commit。当需要在以前的 commit 处创建分支，可以在命令最后设置相应 SHA 即 <code>git branch new_branch SHA_num</code></p><p>⚠️ 创建了新分支后，但是它还不是当前分支，需要使用命令 <code>git checkout branch_name</code> 切换到该分支。</p><p>💡 使用切换分支命令同时添加选项 <code>-b</code> 可以实现<strong>创建并切换到新分支</strong> <code>git checkout -b new_branch</code></p><h3 id="查看分支" tabindex="-1"><a class="header-anchor" href="#查看分支" aria-hidden="true">#</a> 查看分支</h3><p>命令 <code>git branch</code> 列出仓库所有的分支名称时，活跃分支名称旁边会显示一个<strong>星号</strong>。此外Shell 提示符（括号中）也有显示活跃分支/当前分支。</p><p><img src="/blog-code/assets/20191124214539558_9509.cd27a3e2.png" alt="活跃分支"></p><p>使用命令 <code>git log</code> 或 <code>git log --decorate</code> 查看日志时也会显示分支，其中 <code>HEAD</code> 指向的是当前分支</p><p><img src="/blog-code/assets/20191124215936614_2725.645779cc.png" alt="日志中的分支"></p><p>使用命令 <code>git log</code> 并设置选项 <code>--graph</code> 和 <code>--all</code> 可以显示仓库中所有分支和 commit，并在最左侧使用符号进行可视化</p><p><img src="/blog-code/assets/20191125000547267_1280.9d9c653a.png" alt="可视化所有分支和 commit"></p><h3 id="切换分支" tabindex="-1"><a class="header-anchor" href="#切换分支" aria-hidden="true">#</a> 切换分支</h3><p>命令 <code>git checkout branch_name</code> 将 <code>HEAD</code> 指针（<code>HEAD</code> 表示当前分支，即活跃分支）切换到指定分支上，在进行 commit 时，该 commit 将添加到当前分支上。</p><p>💡 添加选项 <code>-b</code> 可以同时实现创建并切换到新分支 <code>git checkout -b new_branch</code></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">git</span> checkout -b footer master
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>创建新的 <code>footer</code> 分支并让此分支的<strong>起点位置</strong>与 <code>master</code> 分支的一样</p><p>⚠️ 执行该命令时会删除工作区中 git 所跟踪的所有文件和目录（因此应在切换分支前使用 <code>git status</code> 查看是否有未提交的修改，应先把更新的文件提交到仓库）由于当前分支 git 跟踪的文件已存储在仓库中，因此什么也不会丢失。然后转到另一分支时，git 会提取该分支指向的 commit 所对应的所有文件和目录到工作区。</p><p><strong>删除分支</strong> 命令 <code>git branch -d branch_name</code> 删除特定的分支</p><ul><li>无法删除当前所在的分支，需要切换到 master 分支，或者创建并切换到新的分支再删除当前分支</li><li>如果某个分支上有任何其他分支上都没有包含的 commit（也就是这个 commit 是要被删除的分支独有的），git 不会删除该分支。<strong>要强制删除，你需要使用大写的 <code>D</code> 选项 <code>- git branch -D barnch_name</code></strong></li></ul><h3 id="合并分支" tabindex="-1"><a class="header-anchor" href="#合并分支" aria-hidden="true">#</a> 合并分支</h3><p>参考：</p><ul><li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merging" target="_blank" rel="noopener noreferrer">分支合并</a>|<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6" target="_blank" rel="noopener noreferrer">中</a></li><li><a href="https://git-scm.com/docs/git-merge" target="_blank" rel="noopener noreferrer">git-merge</a></li><li><a href="https://www.atlassian.com/git/tutorials/git-merge" target="_blank" rel="noopener noreferrer">git 合并</a> Atlassian 博客</li></ul><p>主题分支的作用是可以做出不影响 master 分支的更改。在主题分支上做出更改后，如果觉得不想要该分支上的更改，则可以删掉该分支；若决定要保留更改，则可以将该分支上的更改与其他分支上的更改合并。将分支组合到一起称为合并，git 中有两种类型的合并，即<strong>普通合并</strong>和<strong>快进合并 fast forward</strong>，合并分支时会提交 commit 并添加到检出分支/当前分支上。</p><p>命令 <code>git merge</code> 用来合并 git 分支</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">git</span> merge <span class="token operator">&lt;</span>name-of-branch-to-merge-in<span class="token operator">&gt;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>发生合并时 git 查看分支的历史记录，并寻找两个分支的 commit 历史记录中都有的单个 commit 进行覆盖，而单个分支上更改的代码行进行合并（合并指的是另一个分支上的更改将出现在当前检出的分支上，即合并是将其他分支合并到当前（检出的）分支上，不是将两个分支合并到一个新的分支上），提交一个 commit 并添加到检出分支/当前分支（另一分支不影响），以记录合并操作</p><p>🎦 <a href="https://www.jianguoyun.com/p/DfQmUG4QjNDGBxjN-uAD" target="_blank" rel="noopener noreferrer">合并</a></p><p>如果在错误的分支上进行了合并，可使用命令 <code>git reset --hard HEAD^</code>撤消合并（字符 <code>^</code> 表示相对 commit 引用，即父级 commit）</p><h4 id="快进合并" tabindex="-1"><a class="header-anchor" href="#快进合并" aria-hidden="true">#</a> 快进合并</h4><p>快进合并是将当前检出的分支向前移动，直到它指向与另一个分支（另一分支在 检出分支 前面）指向的 commit 一样为止。快进合并只需要将分支指针向前移动至另一分支（前方的）commit 即可</p><p><img src="/blog-code/assets/20191125093413365_22843.c0062b13.png" alt="快进合并"></p><h4 id="普通合并" tabindex="-1"><a class="header-anchor" href="#普通合并" aria-hidden="true">#</a> 普通合并</h4><p>普通合并是两个完全不一样的分支进行合并。在进行 commit 时，需要提供 commit 消息，代码编辑器打开时 git 已经提供了默认消息（也可以更改消息，但通常都会直接使用默认的合并 commit 消息），可直接关闭编辑器以确认使用该 commit 消息。</p><p><img src="/blog-code/assets/20191125094019574_16234.48da0e70.png" alt="普通合并"></p><h4 id="合并冲突" tabindex="-1"><a class="header-anchor" href="#合并冲突" aria-hidden="true">#</a> 合并冲突</h4><p>参考：</p><ul><li><a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging#Basic-Merge-Conflicts" target="_blank" rel="noopener noreferrer">遇到冲突时的分支合并</a>（<a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E6%96%B0%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6" target="_blank" rel="noopener noreferrer">中译版</a>）</li><li><a href="https://git-scm.com/docs/git-merge#_how_conflicts_are_presented" target="_blank" rel="noopener noreferrer">冲突如何被显示</a></li></ul><p>大部分情况下 git 将能够成功地合并分支，但相同的行在要合并的不同分支上做出了更改时，就会出现合并冲突。如果出现合并冲突，git 将在合并途中暂停并告诉你存在冲突。要解决文件中的冲突：</p><ul><li>打开代码编辑器，找到合并冲突指示符所标注的行（一个文件可能在多个部分存在合并冲突，因此检查整个文件中的合并冲突指示符可搜索 <code>&lt;&lt;&lt;</code> 以查找到所有指示符）</li><li>决定保留哪些行，并删掉不需要的行（包括冲突指示符）</li><li>保存文件</li><li>暂存文件</li><li>提交 commit（推荐使用自动生成的合并 commit 消息）</li></ul><p><img src="/blog-code/assets/20191125160452047_12583.d4044b99.png" alt="合并冲突"></p><p>git 尝试合并在两个分支上都更改了的文件 <code>index.html</code>，但是出现冲突。提示 <code>&quot;Automatic merge failed; fix conflicts and then commit the result&quot;</code> 对冲突文件进行处理后再提交。也可以使用命令 <code>git status</code> 查询冲突信息。</p><p><img src="/blog-code/assets/20191125160732615_14810.0dadf91d.png" alt="合并冲突指示符"></p><p>使用代码编辑器查看冲突文件，其中具有多种合并冲突指示符</p><ul><li><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> 此行下方的所有内容（直到下个指示符）显示了当前分支上的行</li><li><code>||||||| merged common ancestors</code> 此行下方的所有内容（直到下个指示符）显示了<strong>原始行的内容</strong>（即检出分支和合并的另一分支共有 commit （较前）中的版本）</li><li><code>=======</code> 表示原始行内容的结束位置，之后的所有行（直到下个指示符）是被合并的当前分支上的行的内容</li><li><code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; heading-update</code> 是要被合并的分支（此例中是 <code>heading-update</code> 分支）上的行结束指示符</li></ul><p><img src="/blog-code/assets/20191125161309425_29506.82f0fc9e.gif" alt="处理冲突"></p><p>选择保留哪个标题（版本）后，删掉不需要的版本和所有包含合并冲突指示符的行，并保存文件。添加到暂存区，然后 commit（提交信息推荐用自动生成的合并 commit 消息）</p><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">更新时间: </span><span class="meta-item-info">2021/7/6 上午6:20:41</span></div><!----></footer><!----><!--[--><!--]--></main></div><div style="width:0px;" class="catalog-container absolute top-0 right-0 h-full hidden lg:block"><div class="headings-container sticky top-36" data-v-c28348e0><ul class="
+        max-w-max
+        m-2
+        pl-7
+        xl:pl-16
+        2xl:pl-20
+        py-4
+        opacity-50
+        hover:opacity-100
+        transition-all
+        duration-300
+      " data-v-c28348e0><!--[--><!--]--></ul></div></div><div style="display:none;" tabindex="0" class="
+          sidebar-container
+          fixed
+          inset-y-0
+          left-0
+          z-20
+          lg:hidden
+          opacity-10
+          hover:opacity-95
+        "><div class="headings-container
+      px-2
+      space-y-2
+      transition-all
+      duration-300 py-20" data-v-6eed9461><!--[--><!--]--></div></div></div><footer class="bg-gray-200 p-8 grid grid-cols-1 md:grid-cols-3 gap-4 items-center" data-v-2981188c><div class="flex justify-center md:justify-start items-center" data-v-2981188c><a class="p-2 hover:bg-gray-300 rounded-md" href="https://benbinbin.github.io/" target="_blank" data-v-2981188c><img src="/blog-code/images/avatar.png" alt="avatar" class="w-10 h-10 rounded-full" data-v-2981188c></a></div><div class="text-center space-y-0.5" data-v-2981188c><p class="text-sm text-gray-600" data-v-2981188c> ©2021 <span class="author" data-v-2981188c>Benbinbin</span>. All Right Reserved. </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 除特殊说明外，本站的文章遵循 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.en" target="_blank" class="text-blue-400" data-v-2981188c>CC-BY-SA-4.0</a> 协议 </p><p class="text-xs text-center text-gray-400" data-v-2981188c> 网站主题采用 <a href="https://github.com/Benbinbin/two-dishes-one-fish" target="_blank" class="text-blue-400" data-v-2981188c>Two Dishes One Fish</a></p></div><div class="
+        btn-container
+        flex
+        justify-center
+        md:justify-end
+        items-center
+        space-x-0.5
+      " data-v-2981188c><!--[--><a class="p-2 hover:bg-gray-300 rounded-md" href="mailto:benthomsonbin@gmail.com" target="" data-v-2981188c><img src="/blog-code/images/icons/email.svg" alt="email" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://github.com/Benbinbin" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/github.svg" alt="github" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://juejin.cn/user/3175045314389278/posts" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/juejin.svg" alt="juejin" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://dribbble.com/BinBinDesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/dribbble.svg" alt="dribbble" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://twitter.com/Benbinbin_fun" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/twitter.svg" alt="twitter" class="w-auto h-6" data-v-2981188c></a><a class="p-2 hover:bg-gray-300 rounded-md" href="https://weibo.com/binbindesign" target="_blank" data-v-2981188c><img src="/blog-code/images/icons/weibo.svg" alt="weibo" class="w-auto h-6" data-v-2981188c></a><!--]--></div></footer></div><!--]--></div>
+    <script type="module" src="/blog-code/assets/app.93fa4a4f.js" defer></script>
+  </body>
+</html>
